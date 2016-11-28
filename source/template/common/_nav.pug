@@ -1,0 +1,29 @@
+nav.nav
+	-
+		var icons = [
+			{ name: "vkontakte",   url: "https://vk.com/", mods: "vk"},
+			{ name: "twiter", url: "#11", mods: "tw"},
+			{ name: "facebook",    url: "#22", mods: "fb"}
+		]
+	ul.social__list
+		each icon in icons
+			li.cocial__list
+				a(href=icon.url, target="_blank" class="social__link social__link_" + icon.mods) #{icon.name}
+
+	//social__list
+
+	-var triggers = ["trigger-menu_1", "trigger-menu_2", "trigger-menu_3"]
+		.trigger-menu-wrap
+			each trigger in triggers
+				div(class="trigger-menu " + trigger) 
+		//trigger-menu
+
+	.menu
+
+		-var items = ["Мои работы", "Обо мне", "Блог", "Авторизация"]
+		ul.menu__list
+			each item in items
+				li.menu__item
+					a(href="#").menu__link=item
+	//menu
+//nav

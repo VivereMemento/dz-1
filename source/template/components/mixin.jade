@@ -1,0 +1,51 @@
+mixin addSomeText(text1, text2, text3)
+  h2=text1
+  h2=text2
+  h2=text3
+
+// ***** SOCIAL ***** //
+
+.social
+  -
+    var icons = [
+      { name: "vkontakte",   url: "https://vk.com/", mods: "vk"},
+      { name: "twiter", url: "#11", mods: "tw"},
+      { name: "facebook",    url: "#22", mods: "fb"}
+    ]
+  ul.social__list
+    each icon in icons
+      li.cocial__list
+        a(href=icon.url, target="_blank" class="social__link social__link_" + icon.mods) #{icon.name}
+
+// ***** MENU ***** /
+
+.menu
+  - var x = 5;
+  div
+    ul
+      - for (var i=1; i<=x; i++) {
+        li Hello
+      - }
+
+// ***** NAVIGATION ***** //
+
+nav.nav
+  .container
+    -
+      var links = [
+          { name: "Услуги",   url: "#"},
+          { name: "Запчасти", url: "#"},
+          { name: "Вопрос-ответ",    url: "#"},
+          { name: "Отзывы",   url: "#"},
+          { name: "Гарантия",  url: "#"},
+          { name: "Контакты", url: "#"}
+        ]
+
+    ul.nav__list
+      each link in links
+          li.nav__item
+              a(class="nav__link" href=link.url) #{link.name}
+  //container
+//nav
+
+*/

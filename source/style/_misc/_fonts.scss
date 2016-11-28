@@ -1,0 +1,18 @@
+// Roboto
+@font-face {
+	@include font ("roboto/Roboto-Light", "RobotoLight", 300, normal);
+}
+
+@font-face {
+	@include font ("roboto/Roboto-Regular", "RobotoRegular", 400, normal);
+}
+
+@font-face {
+	@include font ("roboto/Roboto-Medium", "RobotoMedium", 500, normal);
+}
+
+//Sansus-Webissimo
+
+@font-face {
+	@include font ("Sansus-Webissimo-Regular", "SansusWebissimo", 400, normal);
+}

@@ -1,0 +1,12 @@
+section.contacts
+	figure.map__img-wrap
+		img.map__img(src="assets/img/map.jpg")
+	.contacts-wrap
+		.title-wrap
+			.title.contacts__title_mods Контакты
+		.contacts__data-wrap
+			-var contacts = ['vesyolaya_nauka', 'hagios@mail.ru', '+38 068 986 15 83', 'Keyv']
+				each contact in contacts
+					span.contacts__data=contact
+	//contacts-wrap
+//contacts

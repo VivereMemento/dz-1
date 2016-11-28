@@ -1,0 +1,44 @@
+section.about
+	.about__me
+		.heading-wrap
+			h1.heading Обо мне
+		figure.about__me-img-wrap
+			img.about__me-img(src="assets/img/iam.jpg")
+		.title-wrap
+			h2.title.about__title_mods Кто я
+		.about__content
+			p.about__text.
+				Я веб разработчик из Новосибирск. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+
+			p.about__text.
+				Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освужу в нем свой контет. А пока посмотрите, как тут все калссно и красиво!
+	//about__me
+	.about__skills
+		.title-wrap
+			h2.title.skills__title_mods
+				|Чем я могу быть 
+				|вам полезен
+		.text-wrap
+			p.skills__text.
+				Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать несложные задачи на Backend. Но давайте по порядку.
+		ul.skills__list
+			
+			li.skills__item
+				h3.skills__title Frontend
+				-var fronts = ["html", "css3", "javascript & jQuery"]
+					each front in fronts
+						span.skills__rating=front
+				
+			li.skills__item
+				h3.skills__title Backend
+				-var fronts = ["php", "mySQL", "Node.js & npm", "Mongo.db"]
+					each front in fronts
+						span.skills__rating=front
+
+			li.sdills__item
+				h3.skills__title Workflow
+				-var fronts = ["Git", "Gulp", "Bower"]
+					each front in fronts
+						span.skills__rating=front
+	//about__skills
+//about
