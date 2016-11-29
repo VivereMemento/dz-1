@@ -7,7 +7,7 @@
 	&__me {
 		width: 50%;
 		padding: 85px 115px 40px 115px;
-		background: url(../img/about_bg_left.svg) no-repeat top left;
+		background: url(../img/drawing-left.svg) no-repeat top left;
 		background-size: cover;
 		box-sizing: border-box;
 	}
@@ -15,7 +15,7 @@
 	&__skills {
 		width: 50%;
 		padding-top: 82px;
-		background: url(../img/about_bg_right.svg) no-repeat top 3px right;
+		background: url(../img/drawing-right.svg) no-repeat top 3px right;
 		background-size: cover;
 	}
 }
@@ -114,6 +114,40 @@
 	border-top: 1px solid $green;
 }
 
+.skills__text-wrap {
+	padding: 0 40px;
+}
+
 .skills__text {
+	fill: #77a266;
+}
+
+.skills__list-title {
+	font: 1.750em/32px $ffRM;
 	color: #566358;
+	text-align: left;
+}
+
+.skills__circle{
+  fill: none;
+  stroke-width: 20;
+}
+
+.skills__circle-empty {
+	fill: none;
+	stroke: #dfdcd5;
+}
+.skills__circle-fill {
+	stroke: #9ab68b;
+    stroke-dasharray: 30 722;
+    transition: all 1s;
+}
+
+.skills__circle:hover .skills__circle-fill {
+   stroke-dasharray: 650 722;
+}
+
+.skills__circle-text {
+	font-size: 0.5em;
+	fill: #9ab68b;
 }

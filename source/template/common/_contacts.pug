@@ -4,9 +4,19 @@ section.contacts
 	.contacts-wrap
 		.title-wrap
 			.title.contacts__title_mods Контакты
-		.contacts__data-wrap
-			-var contacts = ['vesyolaya_nauka', 'hagios@mail.ru', '+38 068 986 15 83', 'Keyv']
-				each contact in contacts
-					span.contacts__data=contact
+		
+		-
+			var contacts = [
+				{ data: "vesyolaya_nauka", data_ic: "#skype"},
+				{ data: "hagios@mail.ru", data_ic: "#envelope"},
+				{ data: "+38 068 986 15 83", data_ic: "#phone"},
+				{ data: "Keyv", data_ic: "#map_marker"},
+			]
+		ul.contacts__list
+			each contact in contacts
+				li.contacts__item
+					svg.contacts__icons
+						use(xlink:href="assets/img/sprite.svg" + contact.data_ic)
+					span.contacts__data #{contact.data}
 	//contacts-wrap
 //contacts

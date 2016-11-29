@@ -20,15 +20,29 @@
 		}
 	}
 
-	&__data-wrap {
+	&__list {
 		margin-top: 20px;
+		padding: 0 40px;
+		text-align: left;
+	}
+
+	&__item {
+		margin-bottom: 15px;
+	}
+
+	&__icons {
+		width: 25px;
+		height: 25px;
+		margin-right: 10px;
+		fill: $green;
+		vertical-align: middle;
 	}
 
 	&__data {
-		margin-bottom: 15px;
 		font-family: $ffRM;
 		color: #566358;
-		display: block;
+		display: inline-block;
+
 	}
 }
 

@@ -18,27 +18,60 @@ section.about
 			h2.title.skills__title_mods
 				|Чем я могу быть 
 				|вам полезен
-		.text-wrap
+		.skills__text-wrap
 			p.skills__text.
 				Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать несложные задачи на Backend. Но давайте по порядку.
 		ul.skills__list
 			
 			li.skills__item
-				h3.skills__title Frontend
-				-var fronts = ["html", "css3", "javascript & jQuery"]
-					each front in fronts
-						span.skills__rating=front
+				h3.skills__list-title Frontend
+					svg(width="100%" height="115" class="skills__circle")
+						circle(r="45" cx="60" cy="60" class="skills__circle-empty")
+						circle(r="45" cx="60" cy="60" transform="rotate(-90 60 60)" class="skills__circle-fill")
+						text(x="34" y="65" class="skills__circle-text") HTML5
+
+						circle(r="45" cx="200" cy="60" class="skills__circle-empty")
+						circle(r="45" cx="150" cy="60" transform="rotate(-90 175 35)" class="skills__circle-fill")
+						text(x="180" y="65" class="skills__circle-text") CSS3
+
+						circle(r="45" cx="340" cy="60" class="skills__circle-empty")
+						circle(r="45" cx="150" cy="60" transform="rotate(-90 245 -35)" class="skills__circle-fill")
+						text(x="307" y="60" class="skills__circle-text") JavaScript 
+						text(x="312" y="75" class="skills__circle-text") & jQuery
 				
 			li.skills__item
-				h3.skills__title Backend
-				-var fronts = ["php", "mySQL", "Node.js & npm", "Mongo.db"]
-					each front in fronts
-						span.skills__rating=front
+				h3.skills__list-title Backend
+					svg(width="100%" height="115" class="skills__circle")
+						circle(r="45" cx="60" cy="60" class="skills__circle-empty")
+						circle(r="45" cx="60" cy="60" transform="rotate(-90 60 60)" class="skills__circle-fill")
+						text(x="45" y="65" class="skills__circle-text") PHP
+
+						circle(r="45" cx="200" cy="60" class="skills__circle-empty")
+						circle(r="45" cx="150" cy="60" transform="rotate(-90 175 35)" class="skills__circle-fill")
+						text(x="175" y="65" class="skills__circle-text") mySQL
+
+						circle(r="45" cx="340" cy="60" class="skills__circle-empty")
+						circle(r="45" cx="150" cy="60" transform="rotate(-90 245 -35)" class="skills__circle-fill")
+						text(x="314" y="60" class="skills__circle-text") Node.js
+						text(x="318" y="75" class="skills__circle-text") & npm
+
+						circle(r="45" cx="480" cy="60" class="skills__circle-empty")
+						circle(r="45" cx="150" cy="60" transform="rotate(-90 315 -105)" class="skills__circle-fill")
+						text(x="445" y="65" class="skills__circle-text") Mongo.db
 
 			li.sdills__item
-				h3.skills__title Workflow
-				-var fronts = ["Git", "Gulp", "Bower"]
-					each front in fronts
-						span.skills__rating=front
+				h3.skills__list-title Workflow
+					svg(width="100%" height="115" class="skills__circle")
+						circle(r="45" cx="60" cy="60" class="skills__circle-empty")
+						circle(r="45" cx="60" cy="60" transform="rotate(-90 60 60)" class="skills__circle-fill")
+						text(x="50" y="65" class="skills__circle-text") Git
+
+						circle(r="45" cx="200" cy="60" class="skills__circle-empty")
+						circle(r="45" cx="150" cy="60" transform="rotate(-90 175 35)" class="skills__circle-fill")
+						text(x="185" y="65" class="skills__circle-text") Gulp
+
+						circle(r="45" cx="340" cy="60" class="skills__circle-empty")
+						circle(r="45" cx="150" cy="60" transform="rotate(-90 245 -35)" class="skills__circle-fill")
+						text(x="320" y="65" class="skills__circle-text") Bower
 	//about__skills
 //about

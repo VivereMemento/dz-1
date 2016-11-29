@@ -1,14 +1,16 @@
 nav.nav
 	-
 		var icons = [
-			{ name: "vkontakte",   url: "https://vk.com/", mods: "vk"},
-			{ name: "twiter", url: "#11", mods: "tw"},
-			{ name: "facebook",    url: "#22", mods: "fb"}
+			{ name: "vkontakte",   url: "https://vk.com/", mods: "#vk"},
+			{ name: "twiter", url: "#11", mods: "#github"},
+			{ name: "facebook",    url: "#22", mods: "#in"}
 		]
-	ul.social__list
+	ul.social
 		each icon in icons
-			li.cocial__list
-				a(href=icon.url, target="_blank" class="social__link social__link_" + icon.mods) #{icon.name}
+			li.social__item
+				a(href=icon.url, target="_blank" class="social__link social__link_") #{icon.name}
+					svg.social__icon
+						use(xlink:href="assets/img/sprite.svg" + icon.mods)
 
 	//social__list
 
@@ -19,11 +21,11 @@ nav.nav
 		//trigger-menu
 
 	.menu
-
-		-var items = ["Мои работы", "Обо мне", "Блог", "Авторизация"]
-		ul.menu__list
-			each item in items
-				li.menu__item
-					a(href="#").menu__link=item
+		.menu-wrap
+			-var items = ["Мои работы", "Обо мне", "Блог", "Авторизация"]
+			ul.menu__list
+				each item in items
+					li.menu__item
+						a(href="#").menu__link=item
 	//menu
 //nav
