@@ -79,11 +79,12 @@
 	}
 }
 
-.social__icon_footer-mods {
+.footer__icons_mods {
+	width: 32px;
+	height: 32px;
 	opacity: .5;
 
 	&:hover {
 		opacity: 1;
-		fill: #fff;
 	}
 }

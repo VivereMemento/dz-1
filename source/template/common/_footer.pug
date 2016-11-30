@@ -18,7 +18,7 @@ footer.footer
 					each icon in icons
 						li.social__item
 							a(href=icon.url, target="_blank" class="social__link social__link_") #{icon.name}
-								svg.social__icon.social__icon_footer-mods
+								svg.icons.footer__icons_mods
 									use(xlink:href="assets/img/sprite.svg" + icon.mods)
 
 				//social__list
@@ -28,5 +28,5 @@ footer.footer
 					| Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
 				span.footer__item-author.footer__item-text_mods - Martin Golding
 
-	.footer__bottom 
+	.footer__bottom
 		span.footer__bottom-text &copy;Александр Кузнецов|Создано с любовью в LoftSchool|2016

@@ -10,12 +10,12 @@ section.contacts
 				{ data: "vesyolaya_nauka", data_ic: "#skype"},
 				{ data: "hagios@mail.ru", data_ic: "#envelope"},
 				{ data: "+38 068 986 15 83", data_ic: "#phone"},
-				{ data: "Keyv", data_ic: "#map_marker"},
+				{ data: "Kyev", data_ic: "#map_marker"},
 			]
 		ul.contacts__list
 			each contact in contacts
 				li.contacts__item
-					svg.contacts__icons
+					svg.icons.contacts__icons_mods
 						use(xlink:href="assets/img/sprite.svg" + contact.data_ic)
 					span.contacts__data #{contact.data}
 	//contacts-wrap

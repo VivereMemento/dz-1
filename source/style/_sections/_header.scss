@@ -52,16 +52,16 @@
   &__link {
     font-size: 0;
   }
+}
 
-  &__icon {
-    width: 30px;
-    height: 30px;
-    fill: #fff;
-    transition: fill .3s;
+.header__icons_mods {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+  transition: fill .3s;
 
-    &:hover {
-      fill: #4e8839;
-    }
+  &:hover {
+    fill: #4e8839;
   }
 }
 
@@ -83,6 +83,11 @@
     margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;
+  }
+
+  &__img {
+    max-width: 100%;
+    min-height: 100%;
   }
 
   &__name-wrap {

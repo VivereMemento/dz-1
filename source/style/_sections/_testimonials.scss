@@ -1,0 +1,142 @@
+.testimonials {
+	text-align: center;
+	background-color: #f4f5f0;
+	position: relative;
+
+	&__img-wrap {
+		margin: 0;
+	}
+
+	&-wrap {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&__heading-wrap_mods {
+		margin: 0;
+		padding: 70px 0;
+		background: #f4f5f0 url(../img/about_header.svg) no-repeat center center;
+		position: relative;
+	}
+
+	&__heading_mods {
+		&:after {
+			left: 36%;
+		}
+	}
+
+	&__list {
+		width: 100%;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	&__item {
+		width: 49%;
+		margin-right: 6px;
+		font-style: italic;
+		display: inline-block;
+
+		&:last-chil {
+			margin-right: 0;
+		}
+
+		&__img {
+			width: 78px;
+			height: 78px;
+			margin: 0 auto;
+			background: url(../img/testimonials.jpg) no-repeat top -18px left -1px;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+
+		&__text-wrap {
+			background: url(../img/quotes.svg) no-repeat top 70px left 2px;
+		}
+
+		&__text {
+			margin-top: 20px;
+			text-align: left;
+		}
+
+		&__name {
+			margin-top: 25px;
+			font-weight: 700;
+			color: #4e8839;
+			display: block;
+		}
+	}
+}
+
+.conection {
+	padding-top: 70px;
+
+	&__form {
+		width: 380px;
+		margin: 0 auto;
+		background-color: fade-out(#e6e7e3, .5);
+		border-radius: 5px;
+	}
+}
+
+.form {
+	width: 100%;
+
+	&__input-wrap {
+		padding: 20px 20px;
+	}
+
+	&__input {
+		width: 100%;
+		margin-bottom: 20px;
+		padding: 15px 20px;
+		background-color: fade-out(#fff, .2);
+		border: none;
+		border-radius: 50px;
+		outline: none;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&_mods {
+			height: 140px;
+			border-radius: 20px;
+		}
+
+		&::-webkit-input-placeholder {
+			color: #5d5a55;
+		}
+	}
+
+	&__btn-wrap {
+		font-size: 0;
+		line-height: 0;
+	}
+
+	&__btn {
+		width: 50%;
+		font: 16px/16px $ffRM;
+		color: #fff;
+		padding: 15px 55px;
+		border: none;
+		background-color: #739c64;
+		cursor: pointer;
+		outline: none;
+
+		&:hover {
+			background-color: #659753;
+		}
+
+		&_br_left {
+			border-bottom-left-radius: 5px;
+		}
+
+		&_br_right {
+			border-bottom-right-radius: 5px;
+		}
+	}
+}

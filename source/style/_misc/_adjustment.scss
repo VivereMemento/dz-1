@@ -1,4 +1,5 @@
 /* --------- adjustment --------- */
+
 $container-width: 1105px;
 $footer-height: 185px;
 $ffRL: 'RobotoLight', sans-serif;
@@ -8,6 +9,65 @@ $ffSWR: 'SansusWebissimo', sans-serif;
 $green: #74a163;
 $titleGreen: #566358;
 $headingBlack: #373e42;
+
+/*----- common classes -----*/
+
+.heading-wrap {
+	margin-bottom: 40px;
+	padding: 20px 0;
+	background:  url(../img/about_heading-bg.png) no-repeat center center;
+}
+
+.heading {
+	margin: 0;
+	font: 3.938em/66px $ffSWR;
+	text-transform: uppercase;
+	color: $headingBlack;
+	display: inline-block;
+	position: relative;
+
+	&:after {
+		content: "";
+		width: 90px;
+		height: 2px;
+		background-color: $headingBlack;
+		position: absolute;
+		bottom: -20px;
+		left: 30%;
+	}
+}
+
+.title-wrap {
+	padding: 30px 0;
+}
+
+.title {
+	margin: 0;
+	font: 2.188em/41px $ffSWR;
+	text-transform: uppercase;
+	color: $titleGreen;
+	display: inline-block;
+	position: relative;
+
+	&:after {
+		content: "";
+		width: 90px;
+		height: 3px;
+		background-color: $titleGreen;
+		position: absolute;
+		bottom: -15px;
+		left: 33%;
+	}
+}
+
+.icons {
+	width: 20px;
+	height: 20px;
+	fill: #fff;
+	vertical-align: middle;
+}
+
+/* ----- common styles ----- */
 
 html {
 	width:100%;
@@ -37,7 +97,6 @@ body {
     height: auto !important;
     height: 100%;
     overflow: hidden;
-	// min-width: $container-width + 30px;
 
 	&:after {
 		display: block;
@@ -69,10 +128,9 @@ p {
 
 footer {	
 	position: relative;
-	// min-width: $container-width + 30;
 	height: $footer-height;
 }
 
-// .maincontent {
-// 	margin-bottom: 29px;
-// }
+* {
+	box-sizing: border-box;
+}

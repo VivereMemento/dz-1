@@ -96,6 +96,11 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    &.active .menu__link:before,
+    &.active .menu__link:after {
+      width: 30px;
+    }
   }
 
   &__link {
@@ -103,34 +108,33 @@
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
-    transition: color .3s ease-in-out 0s;
     position: relative;
 
     &:before {
       content: "";
-      width: 30px;
+      width: 0;
       height: 5px;
       background-color: #fff;
       position: absolute;
       top: 20px;
       left: -40px;
-      display: none;
+      transition: width .3s;
     }
 
     &:after {
       content: "";
-      width: 30px;
+      width: 0;
       height: 5px;
       background-color: #fff;
       position: absolute;
       top: 20px;
       right: -40px;
-      display: none;
+      transition: width .3s;
     }
 
     &:hover.menu__link:before,
     &:hover.menu__link:after {
-      display: block;
+      width: 30px;
     }
   }
 }

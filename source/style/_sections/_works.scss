@@ -1,0 +1,58 @@
+.arrow {
+	margin-bottom: -10px;
+}
+
+.box {
+  margin: 50px auto;
+}
+
+.traingle .left{
+  fill: #f8f9f4;
+}
+.traingle .right{
+  fill: #f8f9f4;
+}
+
+.works {
+	text-align: center;
+	@include clearfix;
+	position: relative;
+
+	&__heading-wrap_mods {
+		margin: 0;
+		padding: 70px 0;
+		background: #f8f9f4 url(../img/works_header.svg) no-repeat center center;
+	}
+}
+
+.discription {
+	width: 50%;
+	padding: 245px 0;
+	float: left;
+	background-color: #ebefe1;
+
+	&__title_mods {
+		&:after {
+			left: 33%;
+		}
+	}
+
+	&__text-wrap {
+		margin-bottom: 55px;
+	}
+
+	&__text {
+		font: 1em $ffRM;
+		color: $green;
+		text-transform: uppercase;
+	}
+
+	&__btn {
+		display: inline-block;
+		padding: 10px 20px;
+		font: 1em $ffRM;
+		color: #fff;
+		background-color: $green;
+		border-radius: 50px;
+	}
+}

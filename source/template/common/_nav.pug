@@ -2,14 +2,14 @@ nav.nav
 	-
 		var icons = [
 			{ name: "vkontakte",   url: "https://vk.com/", mods: "#vk"},
-			{ name: "twiter", url: "#11", mods: "#github"},
-			{ name: "facebook",    url: "#22", mods: "#in"}
+			{ name: "github", url: "https://github.com/VivereMemento/dz-1", mods: "#github"},
+			{ name: "instagram",    url: "https://www.instagram.com/", mods: "#in"}
 		]
 	ul.social
 		each icon in icons
 			li.social__item
 				a(href=icon.url, target="_blank" class="social__link social__link_") #{icon.name}
-					svg.social__icon
+					svg.icons.header__icons_mods
 						use(xlink:href="assets/img/sprite.svg" + icon.mods)
 
 	//social__list
@@ -25,7 +25,7 @@ nav.nav
 			-var items = ["Мои работы", "Обо мне", "Блог", "Авторизация"]
 			ul.menu__list
 				each item in items
-					li.menu__item
+					li(class="menu__item" + ((item == "Обо мне") ? ' active' : ''))
 						a(href="#").menu__link=item
 	//menu
 //nav
