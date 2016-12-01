@@ -38,7 +38,7 @@
 	}
 
 	&__bottom {
-		padding: 10px 0;
+		padding: 8px 0;
 		text-align: center;
 		background-color: fade-out(#80a970, .2);
 
@@ -77,6 +77,10 @@
 		color: #fff;
 		text-decoration: none;
 	}
+}
+
+.footer__social_padding {
+	padding: 0;
 }
 
 .footer__icons_mods {

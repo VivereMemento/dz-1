@@ -49,10 +49,15 @@
 
 	&__btn {
 		display: inline-block;
-		padding: 10px 20px;
+		padding: 12px 20px;
 		font: 1em $ffRM;
 		color: #fff;
+		text-decoration: none;
 		background-color: $green;
 		border-radius: 50px;
+
+		&-icon, &-title {
+			display: inline-block;
+		}
 	}
 }

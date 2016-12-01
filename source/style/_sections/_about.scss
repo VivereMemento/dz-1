@@ -30,10 +30,6 @@
 	min-height: 100%;
 }
 
-.about__content {
-	
-}
-
 .about__text {
 	margin-bottom: 20px;
 	font: 1em/24px $ffRR;
@@ -48,7 +44,9 @@
 /* --------- skills --------- */
 
 .about__title_mods {
-	margin-bottom: 30px;
+	&:after {
+		left: -5%;
+	}
 }
 
 .skills__list {

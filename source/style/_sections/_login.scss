@@ -1,8 +1,282 @@
-.footer__top_login-mods {
-	display: none;
+.maincontent {
+	width: 100%;
+	height: 100%;
 }
 
-.footer__bottom_login-mods {
-	padding-bottom: 50px;
-	background-color: transparent;
+.login {
+	width: 100%;
+	height: 100%;
+	padding-top: 120px;
+	text-align: center;
+	background: $green url(../img/header-bg.jpg) no-repeat top left;
+	background-size: cover;
+
+	&__auth-btn {
+		padding: 15px 25px;
+		font-family: $ffRM;
+		color: #fff;
+		text-decoration: none;
+		border: 1px solid #fff;
+		border-radius: 50px;
+		display: block;
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		transition: all .3s;
+
+		&:hover {
+			background-color: #4e8839;
+		}
+	}
+}
+
+.social {
+	padding: 30px 115px;
+
+	&__item {
+		display: inline-block;
+		margin-right: 25px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__link {
+		font-size: 0;
+	}
+}
+
+.avatar {
+	width: 380px;
+	padding-top: 35px;
+	display: inline-block;
+	background-color: fade-out(#143128, .4);
+	border-radius: 5px;
+	overflow: hidden;
+
+	&__img-wrap {
+		width: 150px;
+		height: 147px;
+		margin: 0 auto;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+	&__img {
+		max-width: 100%;
+		min-height: 100%;
+	}
+
+	&__name-wrap {
+		margin-top: 25px;
+		text-align: center;
+	}
+
+	&__name {
+		font: 500 2.188em/41px $ffRM, sans-serif;
+		color: #fff;
+		display: block;
+	}
+
+	&__dicription {
+		font: 400 1em/24px Arial, sans-serif;
+		color: #fff;
+	}
+
+	&__menu-list {
+		width: 100%;
+		font-size: 0;
+	}
+
+	&__menu-item {
+		display: inline-block;
+		border-right: 2px solid fade-out(#fff, .4);
+
+		&:last-child {
+			border-right: none;
+		}
+	}
+
+	&__menu-link {
+		padding: 15px 30.92px;
+		font: 16px/16px $ffRM;
+		color: #fff;
+		text-decoration: none;
+		background-color: #618f54;
+		display: block;
+
+		&:hover {
+			background-color: #487e38;
+		}
+	}
+}
+
+.login__title_mods {
+	color: #fff;
+
+	&:after {
+		background-color: #fff;
+	}
+}
+
+// *********** login ************** //
+
+.login-auth {
+	@extend .avatar;
+	padding-top: 0;
+}
+
+.form {
+	width: 100%;
+
+	&__input-wrap {
+		padding: 20px 20px;
+	}
+
+	&__input-item {
+		margin-bottom: 20px;
+		position: relative;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__input__icon {
+		width: 50px;
+		height: 50px;
+		background-color: #f0efea;
+		border-bottom-left-radius: 50%;
+		border-top-left-radius: 50%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&__icons {
+		position: relative;
+
+		&_absolute-center {
+			height: 25px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+		}
+
+		&_color {
+			fill: #c5cbcb;
+		}
+	}
+
+	&__input {
+		width: 100%;
+		padding: 14px 20px 14px 65px;
+		background-color: #fff;
+		border: none;
+		border-radius: 50px;
+		outline: none;
+
+		&::-webkit-input-placeholder {
+			color: #5d5a55;
+		}
+	}
+
+	&__btn-wrap {
+		font-size: 0;
+		line-height: 0;
+	}
+
+	&__btn {
+		width: 50%;
+		font: 16px/16px $ffRM;
+		color: #fff;
+		padding: 15px 55px;
+		border: none;
+		background-color: #618f54;
+		border-right: 2px solid fade-out(#fff, .6);
+		cursor: pointer;
+		outline: none;
+
+		&:last-child {
+			border-right: none;
+		}
+
+		&:hover {
+			background-color: #487e38;
+		}
+
+		&_br_left {
+			border-bottom-left-radius: 5px;
+		}
+
+		&_br_right {
+			border-bottom-right-radius: 5px;
+		}
+
+		&_link-mods {
+			padding: 11px 50px;
+			line-height: 24px;
+			text-decoration: none;
+			display: inline-block;
+		}
+	}
+}
+
+.patch {
+
+
+	&-label {
+		cursor: pointer;
+		font-size: 1em;
+
+		&_margin_right {
+			margin-right: 40px;
+		}
+
+		&__text {
+			color: #fff;
+		}
+
+		.patch__input {
+			display: none;
+
+			+ .patch-label__text:before {
+				display: inline-block;
+				content: "";
+				margin-right: 10px;
+				background-color: #6ea156;
+				width: 20px;
+				height: 20px;
+				border-radius: 2px;
+				vertical-align: middle;
+			}
+
+			&:checked + .patch-label__text:before {
+				background: #6ea156 url(../img/check.svg) no-repeat center center;
+			}
+
+		}
+	}
+
+	&-checkbox {
+		margin-bottom: 15px;
+	}
+
+	&__question {
+		margin-bottom: 10px;
+		display: block;
+		color: #fff;
+	}
+}
+
+.login__footer {
+	width: 100%;
+	padding: 30px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 }

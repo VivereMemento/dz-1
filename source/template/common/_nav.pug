@@ -5,7 +5,7 @@ nav.nav
 			{ name: "github", url: "https://github.com/VivereMemento/dz-1", mods: "#github"},
 			{ name: "instagram",    url: "https://www.instagram.com/", mods: "#in"}
 		]
-	ul.social
+	ul.social.nav__social_mods
 		each icon in icons
 			li.social__item
 				a(href=icon.url, target="_blank" class="social__link social__link_") #{icon.name}
@@ -25,7 +25,7 @@ nav.nav
 			-var items = ["Мои работы", "Обо мне", "Блог", "Авторизация"]
 			ul.menu__list
 				each item in items
-					li(class="menu__item" + ((item == "Обо мне") ? ' active' : ''))
+					li(class="menu__item")
 						a(href="#").menu__link=item
 	//menu
 //nav
