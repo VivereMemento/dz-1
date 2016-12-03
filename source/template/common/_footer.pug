@@ -13,6 +13,12 @@ footer.footer
 							li.footer__menu-item
 								a(href="#").footer__menu-link=item
 				//menu
+				-
+					var icons = [
+						{ name: "vkontakte",   url: "https://vk.com/", mods: "#vk"},
+						{ name: "github", url: "https://github.com/VivereMemento/dz-1", mods: "#github"},
+						{ name: "instagram",    url: "https://www.instagram.com/", mods: "#in"}
+					]
 
 				ul.social.footer__social_padding
 					each icon in icons

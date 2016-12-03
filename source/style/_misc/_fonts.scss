@@ -11,14 +11,12 @@
 	@include font ("roboto/Roboto-Medium", "RobotoMedium", 500, normal);
 }
 
+@font-face {
+	@include font ("roboto/Roboto-Bold", "RobotoBold", 700, normal);
+}
+
 //Sansus-Webissimo
 
 @font-face {
 	@include font ("Sansus-Webissimo-Regular", "SansusWebissimo", 400, normal);
-}
-
-//FontAwesome
-
-@font-face {
-	@include font ("FontAwesome", "FontAwesome", 400, normal);
 }

@@ -6,13 +6,21 @@
 .login {
 	width: 100%;
 	height: 100%;
-	padding-top: 120px;
 	text-align: center;
-	background: $green url(../img/header-bg.jpg) no-repeat top left;
 	background-size: cover;
+	position: relative;
+
+	&-wrap {
+		width: 100%;
+		height: 100%;
+		padding-top: 250px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 
 	&__auth-btn {
-		padding: 15px 25px;
+		padding: 10px 25px;
 		font-family: $ffRM;
 		color: #fff;
 		text-decoration: none;
@@ -21,7 +29,7 @@
 		display: block;
 		position: absolute;
 		top: 30px;
-		right: 30px;
+		right: 105px;
 		transition: all .3s;
 
 		&:hover {
@@ -69,19 +77,20 @@
 	}
 
 	&__name-wrap {
-		margin-top: 25px;
+		margin-top: 5px;
 		text-align: center;
 	}
 
 	&__name {
-		font: 500 2.188em/41px $ffRM, sans-serif;
+		font: 500 2em/41px $ffRM;
 		color: #fff;
 		display: block;
 	}
 
 	&__dicription {
-		font: 400 1em/24px Arial, sans-serif;
+		font: 400 1em/24px $ffRR;
 		color: #fff;
+		display: block;
 	}
 
 	&__menu-list {
@@ -112,15 +121,21 @@
 	}
 }
 
+
+// *********** login-auth ************** //
+
+.login__title-wrap_mods {
+	padding: 20px 0;
+}
+
 .login__title_mods {
+	font-size: 2em;
 	color: #fff;
 
 	&:after {
 		background-color: #fff;
 	}
 }
-
-// *********** login ************** //
 
 .login-auth {
 	@extend .avatar;
@@ -143,9 +158,22 @@
 		}
 	}
 
+	&__input {
+		width: 100%;
+		padding: 12px 20px 12px 65px;
+		background-color: #fff;
+		border: none;
+		border-radius: 50px;
+		outline: none;
+
+		&::-webkit-input-placeholder {
+			color: #5d5a55;
+		}
+	}
+
 	&__input__icon {
 		width: 50px;
-		height: 50px;
+		height: 46px;
 		background-color: #f0efea;
 		border-bottom-left-radius: 50%;
 		border-top-left-radius: 50%;
@@ -169,19 +197,6 @@
 
 		&_color {
 			fill: #c5cbcb;
-		}
-	}
-
-	&__input {
-		width: 100%;
-		padding: 14px 20px 14px 65px;
-		background-color: #fff;
-		border: none;
-		border-radius: 50px;
-		outline: none;
-
-		&::-webkit-input-placeholder {
-			color: #5d5a55;
 		}
 	}
 
@@ -259,6 +274,20 @@
 				background: #6ea156 url(../img/check.svg) no-repeat center center;
 			}
 
+			+ .patch-label__text_radio-mods:before {
+				border-radius: 50%;
+				background-color: #ccc;
+			}
+
+			+ .patch-label__text_radio-mods:after {
+				border-radius: 50%;
+				background-color: #ccc;
+			}
+
+			&:checked + .patch-label__text_radio-mods:before {
+				background: #ccc url(../img/dot.svg) no-repeat center center;
+			}
+
 		}
 	}
 
@@ -274,9 +303,7 @@
 }
 
 .login__footer {
-	width: 100%;
-	padding: 30px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
+	height: 50px;
+	margin-top: -50px;
+	text-align: center;
 }

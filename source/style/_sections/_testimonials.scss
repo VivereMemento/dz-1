@@ -21,13 +21,16 @@
 
 	&__heading-wrap_mods {
 		margin: 0;
-		padding: 70px 0;
+		padding: 60px 0;
 		background: #f4f5f0 url(../img/about_header.svg) no-repeat center center;
 		position: relative;
 	}
 
 	&__heading_mods {
+		line-height: 65px;
+
 		&:after {
+			bottom: -35px;
 			left: 36%;
 		}
 	}
@@ -77,19 +80,20 @@
 
 .conection {
 	padding-top: 70px;
+	text-align: center;
 
 	&__form {
 		width: 380px;
-		margin: 0 auto;
 		background-color: fade-out(#e6e7e3, .5);
 		border-radius: 5px;
+		display: inline-block;
 	}
 }
 
 .form {
 
 	&__input_conection-mods {
-		margin-bottom: 20px;
+		margin-bottom: 15px;
 		padding: 15px 20px;
 		background-color: fade-out(#fff, .2);
 
