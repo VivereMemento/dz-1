@@ -20,10 +20,10 @@ footer.footer
 						{ name: "instagram",    url: "https://www.instagram.com/", mods: "#in"}
 					]
 
-				ul.social.footer__social_padding
+				ul.social.footer__social_mods
 					each icon in icons
 						li.social__item
-							a(href=icon.url, target="_blank" class="social__link social__link_") #{icon.name}
+							a(href=icon.url, target="_blank" class="social__link") #{icon.name}
 								svg.icons.footer__icons_mods
 									use(xlink:href="assets/img/sprite.svg" + icon.mods)
 

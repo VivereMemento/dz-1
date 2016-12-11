@@ -4,13 +4,20 @@
 	&__top {
 		padding: 30px 0;
 		background-color: fade-out(#52585b, .2);
+
+		@include phones {
+			text-align: center;
+			padding: 20px 10px;
+		}
 	}
 
 	&__list {
 		display: flex;
 		flex-direction: row;
-
 		
+		@include laptop {
+			flex-wrap: wrap;
+		}
 	}
 
 	&__item {
@@ -18,14 +25,41 @@
 		padding: 0 30px;
 		border-right: 1px solid fade-out(#fff, .7);
 
+		@include laptop {
+			width: 50%;
+			margin-bottom: 40px;
+		}
+
+		@include phones {
+			width: 100%;
+			margin-bottom: 20px;
+			padding: 0  0 20px 0;
+			border-bottom: 1px solid fade-out(#fff, .7);
+			border-right: none;
+
+			&:last-child {
+				border: none;
+				padding: 0;
+			}
+		}
+
 		&:last-child {
 			border-right: none;
+
+			@include laptop {
+				width: 100%;
+				margin-bottom: 0;
+			}
 		}
 
 		&-text,
 		&-author {
 			color: #fff;
 			opacity: .5;
+
+			@include phones {
+				font-size: 0.95rem;
+			}
 		}
 
 		&-author {
@@ -34,16 +68,20 @@
 
 		&-text_mods {
 			font-style: italic;
+
+			@include phones {
+				font-size: 0.8rem;
+			}
 		}
 	}
 
 	&__bottom {
-		padding: 8px 0;
+		padding: 13px 0;
 		text-align: center;
 		background-color: fade-out(#80a970, .2);
 
 		&-text {
-			font-family: 1em $ffRL;
+			font-family: 1rem $ffRL;
 			color: #fff;
 		}
 	}
@@ -73,15 +111,25 @@
 	}
 
 	&-link {
-		font: 1em $ffRM;
+		font: 1rem $ffRM;
 		color: #fff;
 		text-decoration: none;
+
+		@include phones {
+			font-size: 0.9rem;
+		}
 	}
 }
 
-.footer__social_padding {
+.footer__social_mods {
 	padding: 0;
+
+	@include phones {
+		width: 65%;
+		margin: 0 auto;
+	}
 }
+
 
 .footer__icons_mods {
 	width: 32px;

@@ -1,52 +1,50 @@
 section.works
-	.arrow
-		svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 90" preserveaspectratio="none" class="traingle")
-			polygon(class = "left" points="0,0   0,90   500.8,90   500.8,85")
-			polygon(class = "right" points="1000,0   1000,90   500,90   500,85")
 				
 	.heading-wrap.works__heading-wrap_mods
 		h1.heading.works__heading_mods Мои работы
-	ul.discription
-		li.discription__item
-			.title-wrap
-				h2.title.discription__title_mods Сайт школы онлайн <br> образования </br>
-			.discription__text-wrap
-				span.discription__text html, css, javascript
-			.discription__btn-wrap
-				a.discription__btn(href="#")
-					.discription__btn-icon
-						svg.icons
-							use(xlink:href="assets/img/sprite.svg#link")
-					.discription__btn-title Посмотреть сайт
-
-	//discription__list
-
 	.slider-wrap
-		.slider__display
-			img(src="img/2.jpg" alt="" class="slider__display__img")
-		.slider__container
-			ul.slides
-				li.slider__item
-					img(src="assets/img/slider-item1.jpg")
-				li.slider__item
-					img(src="assets/img/slider-item1.jpg")
-				li.slider__item
-					img(src="assets/img/slider-item1.jpg")
-			.buttons
-				span.prev prev
-		//slider__container
+		ul.discription
+			li.discription__item
+				.title-wrap.discription__title-wrap_mods
+					h2.title.discription__title_mods Сайт школы онлайн образования
+				.discription__text-wrap
+					span.discription__text html, css, javascript
+				.discription__btn-wrap
+					a.discription__btn(href="#")
+						.discription__btn-icon
+							svg.icons
+								use(xlink:href="assets/img/sprite.svg#link")
+						.discription__btn-title Посмотреть сайт
 
-		.slider__container
-			ul.slides2
-				li.slider__item
-					img(src="assets/img/slider-item2.jpg")
-				li.slider__item
-					img(src="assets/img/slider-item2.jpg")
-				li.slider__item
-					img(src="assets/img/slider-item2.jpg")
-			.buttons
-				span.next next
+		//discription__list
 
-		//slider__container
+		.slider
+			.slider__display
+				img(src="img/2.jpg" alt="" class="slider__display__img")
+			.slider__container
+				ul.slides
+					li.slider__item
+						img.slider__item-pic(src="assets/img/slider-item1.jpg")
+					li.slider__item
+						img.slider__item-pic(src="assets/img/slider-item1.jpg")
+					li.slider__item
+						img.slider__item-pic(src="assets/img/slider-item1.jpg")
+				.buttons
+					span.prev prev
+			//slider__container
+
+			.slider__container
+				ul.slides2
+					li.slider__item
+						img.slider__item-pic(src="assets/img/slider-item2.jpg")
+					li.slider__item
+						img.slider__item-pic(src="assets/img/slider-item2.jpg")
+					li.slider__item
+						img.slider__item-pic(src="assets/img/slider-item2.jpg")
+				.buttons
+					span.next next
+
+			//slider__container
+		//slider
 	//slider-wrap
 //works

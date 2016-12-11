@@ -12,11 +12,25 @@
 		border-radius: 5px;
 		display: inline-block;
 		position: relative;
+
+		@include laptop {
+			width: 320px;
+			border-radius: 0;
+		}
 	}
 
 	&__title_mods {
+		
+		@include phones {
+			font-size: 35px;
+		}
+
 		&:after {
 			left: 20%;
+
+			@include phones {
+				left: 33%;
+			}
 		}
 	}
 
@@ -24,6 +38,10 @@
 		margin-top: 30px;
 		padding: 0 40px;
 		text-align: left;
+
+		@include phones {
+			margin-top: 0;
+		}
 	}
 
 	&__item {

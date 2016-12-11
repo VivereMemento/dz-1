@@ -1,54 +1,87 @@
 .blog {
-	padding: 55px 100px 230px 50px;
+	padding: 55px 100px 230px 55px;
 	background-color: #faf8f0;
 	display: flex;
 	flex-direction: row;
 	position: relative;
 
-	&__header_mods {
-		height: 450px;
-		background: url(../img/header-bg.jpg) no-repeat top -210px left;
-		background-size: cover;
+	@include tablets {
+		padding: 55px 25px 230px 25px;
 	}
 
-	&__header-wrap_padding {
-		padding-top: 45px;
+	@include phones {
+		padding: 35px 10px 230px 10px;
 	}
 
 	&__heading_mods {
 		color: #fff;
-		font: 3.938em/60px  "SansusWebissimo", sans-serif;
+		font: 3.938rem/90px  "SansusWebissimo", sans-serif;
+
+		@include tablets {
+			font-size: 49px;
+			line-height: 52px;
+		}
 
 		&:after {
 			background-color: #fff;
 			bottom: -25px;
 			left: 13%;
+
+			@include tablets {
+				width: 86px;
+				height: 2px;
+				bottom: -13px;
+				left: 4%;
+			}
 		}
 	}
 
 	&__avatar_mods {
+		width: 380px;
 		background: transparent;
 		padding-bottom: 35px;
 		background: url(../img/blog_header.svg) no-repeat bottom 20px center;
+		display: inline-block;
+		vertical-align: middle;
+		position: static;
+
+		@include phones {
+			width: 304px;
+		}
+
+		@include tablets {
+			background-size: 210px;
+		}
 	}
 
 	&-avatar__discription_margin_top {
 		margin-top: 50px;
+
+		@include tablets {
+			margin-top: 23px;
+		}
 	}
 
-	&__arrow_mods {
-		position: absolute;
-		bottom: 0;
-		left: 0;
+	&__arrow_color {
+		fill: #faf8f0;
 	}
 
 	&__aside {
 		width: 21%;
+
+		@include laptop {
+			display: none;
+		}
 	}
 
 	&__content {
 		width: 60%;
 		margin-left: 110px;
+
+		@include laptop {
+			width: 100%;
+			margin-left: 0;
+		}
 	}
 }
 
@@ -64,13 +97,13 @@
 	}
 
 	&.active .aside__title {
-			font: 1em $ffRB;
+			font: 1rem $ffRB;
 			color: #4e8839;
 		}
 }
 
 .aside__title {
-	font-size: 1em;
+	font-size: 1rem;
 	color: #566358;
 }
 
@@ -78,8 +111,16 @@
 
 	&__title_mods {
 		margin-bottom: 25px;
-		font-size: 2em;
+		font-size: 2rem;
 		line-height: 30px;
+
+		@include tablets {
+			font-size: 30px;
+		}
+
+		@include phones {
+			font-size: 21px;
+		}
 
 		&:after {
 			display: none;
@@ -91,6 +132,11 @@
 		margin-bottom: 70px;
 		border-bottom: 5px solid #ecebe4;
 
+		@include phones {
+			padding-bottom: 40px;
+			margin-bottom: 40px;
+		}
+
 		&:last-child {
 			padding-bottom: 0px;
 			margin-bottom: 0px;
@@ -100,8 +146,12 @@
 
 	&__text {
 		margin-bottom: 15px;
-		font-size: 1em;
+		font-size: 1rem;
 		color: #566358;
+
+		@include tablets {
+			font-size: 14px;
+		}
 
 		&:last-child {
 			margin-bottom: 0;

@@ -1,39 +1,119 @@
 .works {
 	text-align: center;
-	@include clearfix;
 	position: relative;
 
 	&__heading-wrap_mods {
 		margin: 0;
-		padding: 15px 0 30px 0;
-		background: #f8f9f4 url(../img/works_header.svg) no-repeat center center;
+		padding: 30px 0;
+		background-color: #f8f9f5;
+
+		@include tablets {
+			padding: 50px 0;
+		}
+
+		@include phones {
+			padding: 15px 0 30px 0;
+		}
+
+		&:before {
+			background: url(../img/works_header.svg) no-repeat center center;
+			top: -16px;
+			
+			@include tablets {
+				background-size: 430px 150px;
+				top: -17px;
+			}
+
+			@include phones {
+				background-size: 225px 100px;
+				top: -12px;
+			}
+		}
 	}
 
 	&__heading_mods {
 		&:after {
 			left: 38%;
+
+			@include tablets {
+				left: 36%;
+				bottom: -25px;
+			}
+
+			@include phones {
+				left: 34%;
+			}
 		}
+	}
+
+	&__arrow__left_color {
+		fill: #f8f9f5;
+	}
+
+	&__arrow__right_color {
+		fill: #f8f9f5;
 	}
 }
 
 .discription {
 	width: 50%;
-	padding: 213px 0 255px 0;
-	float: left;
+	height: 100vh;
 	background-color: #ebefe1;
+
+	@include tablets {
+		width: 100%;
+		height: 100%;
+		padding-bottom: 30px;
+	}
+
+	@include phones {
+		width: 100%;
+		float: none;
+		padding: 20px 0 20px 0;
+	}
+
+	&:before {
+		content: "";
+		height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	&__item {
+		width: 380px;
+		display: inline-block;
+		vertical-align: middle;
+
+		@include tablets {
+			width: 100%;
+		}
+	}
+
+	&__title-wrap_mods {
+		margin-bottom: 50px;
+		padding: 0;
+	}
 
 	&__title_mods {
 		&:after {
-			left: 33%;
+			left: 37%;
+
+			@include tablets {
+				left: 41%;
+			}
 		}
 	}
 
 	&__text-wrap {
-		margin: 20px 0 55px 0;
+		margin-bottom: 55px;
+
+		@include phones {
+			margin: 15px -0;
+		}
 	}
 
 	&__text {
-		font: 1em $ffRM;
+		font: 1rem $ffRM;
 		color: $green;
 		text-transform: uppercase;
 	}
@@ -41,7 +121,7 @@
 	&__btn {
 		display: inline-block;
 		padding: 12px 20px;
-		font: 1em $ffRM;
+		font: 1rem $ffRM;
 		color: #fff;
 		text-decoration: none;
 		background-color: $green;

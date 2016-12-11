@@ -7,6 +7,11 @@
   position: fixed;
   top: 30px;
   right: 30px;
+
+  @include phones {
+    top: 10px;
+    right: 10px;
+  }
 }
 
 .trigger-menu {
@@ -104,7 +109,7 @@
   }
 
   &__link {
-    font: 2.188em/41px $ffSWR;
+    font: 2.188rem/41px $ffSWR;
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;

@@ -1,82 +1,84 @@
 .login
-	figure.bg-wrap
+	figure.bg-wrap.login__bg-wrap_mods
 		img.bg(src="assets/img/header-bg.jpg" alt="fores-and-lake")
 	//header__bg-wrap
 	.login-wrap
 		a.login__auth-btn(href="#") Авторизоваться
-		.avatar
-			.avatar-wrap
-				figure.avatar__img-wrap
-					img.avatar__img(src="assets/img/avatar.jpg")
-				.avatar__name-wrap
-					span.avatar__name Кузнецов Александр
-					span.avatar__dicription Личный сайт веб разработчика
-					
-			.social-wrap
-				-
-					var icons = [
-						{ name: "vkontakte",   url: "https://vk.com/", mods: "#vk"},
-						{ name: "github", url: "https://github.com/VivereMemento/dz-1", mods: "#github"},
-						{ name: "instagram",    url: "https://www.instagram.com/", mods: "#in"}
-					]
-				ul.social
-					each icon in icons
-						li.social__item
-							a(href=icon.url, target="_blank" class="social__link social__link_") #{icon.name}
-								svg.icons.header__icons_mods
-									use(xlink:href="assets/img/sprite.svg" + icon.mods)
+		.flip-container
+			.flipper
+				.avatar
+					.avatar-wrap
+						figure.avatar__img-wrap
+							img.avatar__img(src="assets/img/avatar.jpg")
+						.avatar__name-wrap
+							span.avatar__name Кузнецов Александр
+							span.avatar__dicription Личный сайт веб разработчика
+							
+					.social-wrap
+						-
+							var icons = [
+								{ name: "vkontakte",   url: "https://vk.com/", mods: "#vk"},
+								{ name: "github", url: "https://github.com/VivereMemento/dz-1", mods: "#github"},
+								{ name: "instagram",    url: "https://www.instagram.com/", mods: "#in"}
+							]
+						ul.social
+							each icon in icons
+								li.social__item
+									a(href=icon.url, target="_blank" class="social__link social__link_") #{icon.name}
+										svg.icons.header__icons_mods
+											use(xlink:href="assets/img/sprite.svg" + icon.mods)
 
-			.avatar__menu
-					-
-						var items = [
-							{ name: "Мои работы",   href: "works.html"},
-							{ name: "Обо мне",   href: "about.html"},
-							{ name: "Блог",   href: "blog.html"}
-						]
-					ul.avatar__menu-list
-						each item in items
-							li.avatar__menu-item
-								a(href="" + item.href).avatar__menu-link=item.name
+					.avatar__menu
+							-
+								var items = [
+									{ name: "Мои работы",   href: "works.html"},
+									{ name: "Обо мне",   href: "about.html"},
+									{ name: "Блог",   href: "blog.html"}
+								]
+							ul.avatar__menu-list
+								each item in items
+									li.avatar__menu-item
+										a(href="" + item.href).avatar__menu-link=item.name
 
-		//avatar
+				//avatar
 
-		.login-auth
-			.title-wrap.login__title-wrap_mods
-				h2.title.login__title_mods Авторизируйтесь
-			form.form
-				.form__input-wrap
-					.form__input-item
-						.form__input__icon
-							.icons.form__icons_absolute-center
-								svg.icons.form__icons_color
-									use(xlink:href="assets/img/sprite.svg#login")
-						input.form__input(type="text" placeholder="Логин")
+				.login-auth
+					.title-wrap.login__title-wrap_mods
+						h2.title.login__title_mods Авторизируйтесь
+					form.form
+						.form__input-wrap
+							.form__input-item
+								.form__input__icon
+									.icons.form__icons_absolute-center
+										svg.icons.form__icons_color
+											use(xlink:href="assets/img/sprite.svg#login")
+								input.form__input(type="text" placeholder="Логин")
 
-					.form__input-item
-						.form__input__icon
-							.icons.form__icons_absolute-center
-								svg.icons.form__icons_color
-									use(xlink:href="assets/img/sprite.svg#password")
-						input.form__input(type="text" placeholder="Пароль")
+							.form__input-item
+								.form__input__icon
+									.icons.form__icons_absolute-center
+										svg.icons.form__icons_color
+											use(xlink:href="assets/img/sprite.svg#password")
+								input.form__input(type="text" placeholder="Пароль")
 
-					.patch.patch-checkbox
-						label.patch-label
-							input.patch__input(name="check" type="checkbox")
-							span.patch-label__text Я человек
-						
-					.patch.radio
-						span.patch__question Вы точно не робот?
-						label.patch-label.patch-label_margin_right
-							input.patch__input(name="check" type="radio")
-							span.patch-label__text.patch-label__text_radio-mods
-								| Да
-						label.patch-label
-							input.patch__input(name="check" type="radio")
-							span.patch-label__text.patch-label__text_radio-mods 
-								| Не уверен
+							.patch.patch-checkbox
+								label.patch-label
+									input.patch__input(name="check" type="checkbox")
+									span.patch-label__text Я человек
+								
+							.patch.radio
+								span.patch__question Вы точно не робот?
+								label.patch-label.patch-label_margin_right
+									input.patch__input(name="check" type="radio")
+									span.patch-label__text.patch-label__text_radio-mods
+										| Да
+								label.patch-label
+									input.patch__input(name="check" type="radio")
+									span.patch-label__text.patch-label__text_radio-mods 
+										| Не уверен
 
-				.form__btn-wrap
-					a.form__btn.form__btn_br_left.form__btn_link-mods(href="#") На главную
-					input.form__btn.form__btn_br_right(type="submit" value="Войти")
+						.form__btn-wrap
+							a.form__btn.form__btn-link_mods(href="#") На главную
+							input.form__btn(type="submit" value="Войти")
 
-		//login-auth
+				//login-auth

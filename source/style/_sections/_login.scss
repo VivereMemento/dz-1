@@ -1,22 +1,24 @@
-.maincontent {
-	width: 100%;
-	height: 100%;
-}
-
 .login {
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	text-align: center;
-	background-size: cover;
 	position: relative;
 
 	&-wrap {
 		width: 100%;
 		height: 100%;
-		padding-top: 250px;
 		position: absolute;
 		top: 0;
+		right: 0;
+		bottom: 0;
 		left: 0;
+
+		&:before {
+			content: "";
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+		}
 	}
 
 	&__auth-btn {
@@ -35,11 +37,24 @@
 		&:hover {
 			background-color: #4e8839;
 		}
+
+		@include tablets {
+			right: 30px;
+		}
+
+		@include phones {
+			top: 10px;
+			right: 23%;
+		}
 	}
 }
 
 .social {
 	padding: 30px 115px;
+
+	@include tablets {
+		padding: 30px 80px;
+	}
 
 	&__item {
 		display: inline-block;
@@ -55,13 +70,39 @@
 	}
 }
 
-.avatar {
+.flip-container {
 	width: 380px;
-	padding-top: 35px;
+	height: 390px;
+	perspective: 1000px;
 	display: inline-block;
+	vertical-align: middle;
+
+	@include phones {
+		width: 310px;
+	}
+}
+
+.flipper {
+	transition: .6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+.flip {
+	transform: rotateY(180deg);
+}
+
+.avatar {
+	padding-top: 35px;
 	background-color: fade-out(#143128, .4);
 	border-radius: 5px;
 	overflow: hidden;
+	z-index: 2;
+	transform: rotateY(0deg);
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
 
 	&__img-wrap {
 		width: 150px;
@@ -69,6 +110,11 @@
 		margin: 0 auto;
 		border-radius: 50%;
 		overflow: hidden;
+
+		@include tablets {
+			width: 140px;
+			height: 140px;
+		}
 	}
 
 	&__img {
@@ -82,13 +128,17 @@
 	}
 
 	&__name {
-		font: 500 2em/41px $ffRM;
+		font: 500 2rem/41px $ffRM;
 		color: #fff;
 		display: block;
+
+		@include tablets {
+			font-size: 1.7rem;
+		}
 	}
 
 	&__dicription {
-		font: 400 1em/24px $ffRR;
+		font: 400 1rem/24px $ffRR;
 		color: #fff;
 		display: block;
 	}
@@ -118,6 +168,10 @@
 		&:hover {
 			background-color: #487e38;
 		}
+
+		@include tablets {
+			padding: 15px 19.2px;
+		}
 	}
 }
 
@@ -129,7 +183,7 @@
 }
 
 .login__title_mods {
-	font-size: 2em;
+	font-size: 2rem;
 	color: #fff;
 
 	&:after {
@@ -140,6 +194,7 @@
 .login-auth {
 	@extend .avatar;
 	padding-top: 0;
+	transform: rotateY(180deg);
 }
 
 .form {
@@ -206,15 +261,22 @@
 	}
 
 	&__btn {
-		width: 50%;
 		font: 16px/16px $ffRM;
 		color: #fff;
-		padding: 15px 55px;
+		padding: 15px 72px;
 		border: none;
 		background-color: #618f54;
 		border-right: 2px solid fade-out(#fff, .6);
 		cursor: pointer;
 		outline: none;
+
+		@include tablets {
+			padding: 15px 60px;
+		}
+
+		@include phones {
+			padding: 15px 55px;
+		}
 
 		&:last-child {
 			border-right: none;
@@ -224,19 +286,15 @@
 			background-color: #487e38;
 		}
 
-		&_br_left {
-			border-bottom-left-radius: 5px;
-		}
-
-		&_br_right {
-			border-bottom-right-radius: 5px;
-		}
-
-		&_link-mods {
+		&-link_mods {
 			padding: 11px 50px;
 			line-height: 24px;
 			text-decoration: none;
 			display: inline-block;
+
+			@include tablets {
+				padding: 11px 32px;
+			}
 		}
 	}
 }
@@ -246,7 +304,7 @@
 
 	&-label {
 		cursor: pointer;
-		font-size: 1em;
+		font-size: 1rem;
 
 		&_margin_right {
 			margin-right: 40px;
@@ -276,16 +334,16 @@
 
 			+ .patch-label__text_radio-mods:before {
 				border-radius: 50%;
-				background-color: #ccc;
+				background-color: #fff;
 			}
 
 			+ .patch-label__text_radio-mods:after {
 				border-radius: 50%;
-				background-color: #ccc;
+				background-color: #fff;
 			}
 
 			&:checked + .patch-label__text_radio-mods:before {
-				background: #ccc url(../img/dot.svg) no-repeat center center;
+				background: #fff url(../img/dot.svg) no-repeat center center;
 			}
 
 		}

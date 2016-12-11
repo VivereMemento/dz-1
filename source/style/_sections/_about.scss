@@ -4,32 +4,103 @@
 	display: flex;
 	flex-direction: row;
 
+	@include tablets {
+		flex-wrap: wrap;
+	}
+
+	&__arrow__left_color {
+		fill: #EBEFE2;
+	}
+
+	&__arrow__right_color {
+		fill: #F8F9F5;
+
+		@include tablets {
+			fill: #EBEFE2;
+		}
+	}
+
 	&__me {
 		width: 50%;
-		padding: 135px 15px 15px 25px;
-		background: url(../img/drawing-left.svg) no-repeat top left;
-		background-size: cover;
-		box-sizing: border-box;
-		@include clearfix;
+		padding: 0 15px 15px 25px;
+		background-color: #EBEFE2;
+
+		@include desktopMiddle {
+			padding-bottom: 70px;
+		}
+
+		@include tablets {
+			width: 100%;
+			padding: 30px 145px 45px 145px;
+		}
+
+		@include phones {
+			width: 100%;
+			padding: 0;
+		}
 	}
 
 	&__skills {
 		width: 50%;
-		padding-top: 135px;
-		background: url(../img/drawing-right.svg) no-repeat top 3px right;
-		background-size: cover;
+		background-color: #F8F9F5;
+
+		@include tablets {
+			width: 100%;
+		}
 	}
 
 	&__heading-wrap_mods {
 		width: 48%;
 		display: inline-block;
 		vertical-align: top;
+
+		@include desktopMiddle {
+			width: 100%;
+			margin-top: -45px;
+		}
+
+		@include desktopSmall {
+			margin-top: 0;
+		}
+
+		@include tablets {
+			margin-bottom: 20px;
+		}
+
+		&:before {
+			background: url(../img/about_header_about.svg) no-repeat center center;
+			background-size: 350px 150px;
+
+			@include tablets {
+				background-size: 250px 100px;
+			}
+		}
+	}
+
+	&__heading_mods {
+		@include tablets {
+			line-height: 95px;
+		}
+
+		&:after {
+			bottom: 10px;
+		}
 	}
 
 	&__content {
 		width: 51%;
-		padding-top: 43px;
+		margin-top: 43px;
 		display: inline-block;
+
+		@include desktopMiddle {
+			width: 75%;
+			margin-top: 0;
+		}
+
+		@include tablets {
+			width: 100%;
+			margin-top: 0;
+		}
 	}
 
 	&__me-img-wrap {
@@ -44,21 +115,43 @@
 
 	&__text-wrap {
 		padding: 20px 25px 0 0;
+
+		@include tablets {
+			padding: 0;
+		}
+
+		@include phones {
+			padding: 0 10px 20px 10px;
+		}
 	}
 
 	&__text {
 		margin-bottom: 20px;
-		font: 1em/23px $ffRR;
+		font: 1rem/23px $ffRR;
 		color: #566358;
 		text-align: left;
 
 		&:last-child {
 			margin-bottom: 0;
 		}
+
+		@include phones {
+			font-size: 14px;
+		}
 	}
 }
 
 /* --------- skills --------- */
+
+.about__title-wrap_mods {
+	@include desktopMiddle {
+		margin-top: -45px;
+	}
+
+	@include desktopSmall {
+		margin-top: 0;
+	}
+}
 
 .about__title_mods {
 	&:after {
@@ -68,13 +161,49 @@
 
 .skills {
 
+	&__text-wrap {
+		margin-top: 30px;
+		padding: 0 35px;
+
+		@include tablets {
+			margin-top: 0;
+			padding: 0 110px;
+		}
+
+		@include phones {
+			padding: 20px 10px;
+			font-size: 0.875rem;
+		}
+	}
+
+	&__text {
+		color: #566358;
+		text-align: left;
+	}
+
+
 	&__list {
 		padding: 50px 10px 22px 35px;
 
-		&-title {
-			margin: 0;
-			margin-bottom: 7px;
-			text-align: left;
+		@include phones {
+			padding: 10px;
+		}
+	}
+
+	&__list-title {
+		margin: 0;
+		margin-bottom: 7px;
+		font: 1.750rem/32px $ffRM;
+		color: #566358;
+		text-align: left;
+
+		@include tablets {
+			text-align: center;
+		}
+
+		@include phones {
+			font-size: 21px;
+			margin-bottom: 0;
 		}
 	}
 
@@ -86,34 +215,60 @@
 		}
 	}
 
-	&__text-wrap {
-		margin-top: 30px;
-		padding: 0 35px;
+	&__item-wrap {
+		display: flex;
+
+		@include tablets {
+			justify-content: center;
+		}
+
+		@include phones {
+			flex-wrap: wrap;
+		}
 	}
 
-	&__text {
-		color: #566358;
-		text-align: left;
-	}__list-title {
-		font: 1.750em/32px $ffRM;
-		color: #566358;
-		text-align: left;
-	}
-
-	&__circle{
+	&__circle {
+		width: 25%;
 		fill: none;
 		stroke-width: 20;
+		display: inline-block;
+
+		@include desktopSmall {
+			width: 25%;
+		}
+
+		@include tablets {
+			width: 22%;
+		}
+
+		@include phones {
+			width: 45%;
+		}
 	}
 
 	&__circle-empty {
+		cx: 65;
+		cy: 75;
+		-moz-r: 52;
 		fill: none;
 		stroke: #dfdcd5;
+
+		@include desktopMiddle {
+			r: 48;
+		}
 	}
 
 	&__circle-fill {
+		cx: 45;
+		cy: 65;
+		r:52;
 		stroke: #74a264;
-			stroke-dasharray: 30 722;
-			transition: all 1s;
+		stroke-dasharray: 30 722;
+		transition: all 1s;
+
+		@include desktopMiddle {
+			r: 48;
+		}
 	}
 
 	&__circle:hover .skills__circle-fill {
@@ -121,7 +276,7 @@
 	}
 
 	&__circle-text {
-		font-size: 1em;
+		font-size: 1rem;
 		fill: #74a264;
 	}
 }

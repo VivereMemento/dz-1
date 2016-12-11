@@ -1,57 +1,82 @@
-img {
-  min-width: 100%;
-  max-width: 100%;
-  min-height: 100%;
-}
-
 .slider-wrap {
-  width: 50%;
-  float: left;
-  background-color: #e1e4d7;
+	display: flex;
+
+	@include tablets {
+	flex-wrap: wrap;
+	}
 }
 
-.slider__container {
-  position: relative;
-  background-color: #fff;
-  height: 225px;
-  width: 50%;
-  overflow:hidden;
-  float: left;
-}
+.slider {
+	width: 50%;
+	height: 100vh;
+	background-color: #e1e4d7;
 
-.slider__display {
-  width: 100%;
-  height: 525px;
+	@include tablets {
+		width: 100%;
+	}
+
+	@include phones {
+		width: 100%;
+		height: 100%;
+		float: none;
+	}
+
+	&__display {
+		width: 100%;
+		height: 65%;
+
+		@include phones {
+			height: 250px;
+		}
+	}
+
+	&__container {
+		width: 50%;
+		height: 35%;
+		float: left;
+		background-color: #fff;
+		overflow:hidden;
+		position: relative;
+
+		@include phones {
+			height: 110px;
+		}
+	}
+
+	&__item-pic {
+		min-width: 100%;
+		min-height: 100%;
+	}
 }
 
 .slides, .slides2 {
-  height: 100%;
-  position: relative;
-  .slider__item {
-    float:left;
-    height: 100%;
-    width: 100%;
-  }
+	height: 100%;
+	position: relative;
+	.slider__item {
+	float:left;
+	height: 100%;
+	width: 100%;
+	}
 }
 
 .buttons {
-  position: absolute;
-  bottom:0;
-  right:0;
-  .next, .prev {
-    display:inline-block;
-    margin:10px;
-    background-color: #e67e22;
-    color:#fff;
-    padding: 5px 20px;
-    border-radius:5px;
-    cursor: pointer;
-    &:hover {
-      background-color: darken(#e67e22,10%);
-     }
-  }
+	position: absolute;
+	bottom:0;
+	right:0;
+	.next, .prev {
+	display:inline-block;
+	margin:10px;
+	background-color: #e67e22;
+	color:#fff;
+	padding: 5px 20px;
+	border-radius:5px;
+	cursor: pointer;
+	&:hover {
+		background-color: darken(#e67e22,10%);
+	 }
+	}
 }
 
 .slides li.solid-bg, .slides2 li.solid-bg {
-  background-color: #999999;
+	background-color: #999999;
 }

@@ -1,7 +1,7 @@
 section.about
 	.about__me
 		.heading-wrap.about__heading-wrap_mods
-			h1.heading Обо мне
+			h1.heading.about__heading_mods Обо мне
 		.about__content
 			figure.about__me-img-wrap
 				img.about__me-img(src="assets/img/iam.jpg")
@@ -15,7 +15,7 @@ section.about
 					Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освужу в нем свой контет. А пока посмотрите, как тут все калссно и красиво!
 	//about__me
 	.about__skills
-		.title-wrap
+		.title-wrap.about__title-wrap_mods
 			h2.title.skills__title_mods
 				|Чем я могу быть <br>вам полезен</br>
 		.skills__text-wrap
@@ -25,53 +25,63 @@ section.about
 			
 			li.skills__item
 				h3.skills__list-title Frontend
-				svg(width="100%" height="140" class="skills__circle")
-					circle(class="skills__circle-empty" r="52" cx="65" cy="70")
-					circle(class="skills__circle-fill" r="52" cx="50" cy="65" transform="rotate(-90 60 60)")
-					text(x="37" y="75" class="skills__circle-text") HTML5
+				.skills__item-wrap
+					svg(width="100%" height="140" class="skills__circle")
+						circle(class="skills__circle-empty" r="52" cx="65" cy="75")
+						circle(class="skills__circle-fill" r="52" cx="45" cy="65" transform="rotate(-90 60 60)")
+						text(x="37" y="80" class="skills__circle-text") HTML5
 
-					circle(class="skills__circle-empty" r="52" cx="225" cy="70")
-					circle(class="skills__circle-fill" r="52" cx="140" cy="85" transform="rotate(-90 175 35)")
-					text(x="205" y="75" class="skills__circle-text") CSS3
+					svg(width="100%" height="140" class="skills__circle")
+						circle(class="skills__circle-empty" r="52" cx="65" cy="75")
+						circle(class="skills__circle-fill" r="52" cx="45" cy="65" transform="rotate(-90 60 60)")
+						text(x="45" y="80" class="skills__circle-text") CSS3
 
-					circle(class="skills__circle-empty" r="52" cx="385" cy="70")
-					circle(class="skills__circle-fill" r="52" cx="140" cy="105" transform="rotate(-90 245 -35)")
-					text(x="345" y="70" class="skills__circle-text") JavaScript 
-					text(x="350" y="85" class="skills__circle-text") & jQuery
+					svg(width="100%" height="140" class="skills__circle")
+						circle(class="skills__circle-empty" r="52" cx="65" cy="75")
+						circle(class="skills__circle-fill" r="52" cx="45" cy="65" transform="rotate(-90 60 60)")
+						text(x="27" y="75" class="skills__circle-text") JavaScript 
+						text(x="37" y="90" class="skills__circle-text") &amp; jQuery
 				
 			li.skills__item
 				h3.skills__list-title Backend
-				svg(width="100%" height="140" class="skills__circle")
-					circle(class="skills__circle-empty" r="52" cx="65" cy="70")
-					circle(class="skills__circle-fill" r="52" cx="50" cy="65" transform="rotate(-90 60 60)")
-					text(x="48" y="75" class="skills__circle-text") PHP
+				.skills__item-wrap
+					svg(width="100%" height="140" class="skills__circle")
+						circle(class="skills__circle-empty" r="52" cx="65" cy="75")
+						circle(class="skills__circle-fill" r="52" cx="45" cy="65" transform="rotate(-90 60 60)")
+						text(x="48" y="80" class="skills__circle-text") PHP
 
-					circle(class="skills__circle-empty" r="52" cx="225" cy="70")
-					circle(class="skills__circle-fill" r="52" cx="140" cy="85" transform="rotate(-90 175 35)")
-					text(x="198" y="75" class="skills__circle-text") mySQL
+					svg(width="100%" height="140" class="skills__circle")
+						circle(class="skills__circle-empty" r="52" cx="65" cy="75")
+						circle(class="skills__circle-fill" r="52" cx="45" cy="65" transform="rotate(-90 60 60)")
+						text(x="37" y="80" class="skills__circle-text") mySQL
 
-					circle(class="skills__circle-empty" r="52" cx="385" cy="70")
-					circle(class="skills__circle-fill" r="52" cx="140" cy="105" transform="rotate(-90 245 -35)")
-					text(x="355" y="70" class="skills__circle-text") Node.js
-					text(x="360" y="85" class="skills__circle-text") & npm
+					svg(width="100%" height="140" class="skills__circle")
+						circle(class="skills__circle-empty" r="52" cx="65" cy="75")
+						circle(class="skills__circle-fill" r="52" cx="45" cy="65" transform="rotate(-90 60 60)")
+						text(x="37" y="75" class="skills__circle-text") Node.js
+						text(x="37" y="90" class="skills__circle-text") &amp; npm
 
-					circle(class="skills__circle-empty" r="52" cx="545" cy="70")
-					circle(class="skills__circle-fill" r="52" cx="140" cy="125" transform="rotate(-90 315 -105)")
-					text(x="510" y="75" class="skills__circle-text") Mongo.db
+					svg(width="100%" height="140" class="skills__circle")
+						circle(class="skills__circle-empty" r="52" cx="65" cy="75")
+						circle(class="skills__circle-fill" r="52" cx="45" cy="65" transform="rotate(-90 60 60)")
+						text(x="29" y="80" class="skills__circle-text") Mongo.db
 
 			li.sdills__item
 				h3.skills__list-title WorkFlow
-				svg(width="100%" height="140" class="skills__circle")
-					circle(class="skills__circle-empty" r="52" cx="65" cy="70")
-					circle(class="skills__circle-fill" r="52" cx="50" cy="65" transform="rotate(-90 60 60)")
-					text(x="50" y="75" class="skills__circle-text") Git
+				.skills__item-wrap
+					svg(width="100%" height="140" class="skills__circle")
+						circle(class="skills__circle-empty" r="52" cx="65" cy="75")
+						circle(class="skills__circle-fill" r="52" cx="45" cy="65" transform="rotate(-90 60 60)")
+						text(x="48" y="80" class="skills__circle-text") Git
 
-					circle(class="skills__circle-empty" r="52" cx="225" cy="70")
-					circle(class="skills__circle-fill" r="52" cx="140" cy="85" transform="rotate(-90 175 35)")
-					text(x="205" y="75" class="skills__circle-text") Gulp
+					svg(width="100%" height="140" class="skills__circle")
+						circle(class="skills__circle-empty" r="52" cx="65" cy="75")
+						circle(class="skills__circle-fill" r="52" cx="45" cy="65" transform="rotate(-90 60 60)")
+						text(x="48" y="80" class="skills__circle-text") Gulp
 
-					circle(class="skills__circle-empty" r="52" cx="385" cy="70")
-					circle(class="skills__circle-fill" r="52" cx="140" cy="105" transform="rotate(-90 245 -35)")
-					text(x="360" y="75" class="skills__circle-text") Bower
+					svg(width="100%" height="140" class="skills__circle")
+						circle(class="skills__circle-empty" r="52" cx="65" cy="75")
+						circle(class="skills__circle-fill" r="52" cx="45" cy="65" transform="rotate(-90 60 60)")
+						text(x="45" y="80" class="skills__circle-text") Bower
 	//about__skills
 //about

@@ -1,5 +1,8 @@
-header.header.blog__header_mods
-	.header-wrap.blog__header-wrap_padding
+header.header
+	figure.bg-wrap
+		img.bg(src="assets/img/header-bg.jpg" alt="fores-and-lake")
+	//header__bg-wrap
+	.header-wrap
 		.avatar.blog__avatar_mods
 			figure.avatar__img-wrap
 				img.avatar__img(src="assets/img/avatar.jpg")
@@ -8,10 +11,10 @@ header.header.blog__header_mods
 					| Блог
 				span.avatar__dicription.blog-avatar__discription_margin_top
 					| Статьи, которые я написал
-		.arrow.blog__arrow_mods
+		.arrow
 			svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 90" preserveaspectratio="none" class="traingle")
-				polygon(class = "left" points="0,0   0,90   500.8,90   500.8,85")
-				polygon(class = "right" points="1000,0   1000,90   500,90   500,85")
+				polygon(class = "arrow__left  blog__arrow_color" points="0,0   0,90   500.8,90   500.8,85")
+				polygon(class = "arrow__right blog__arrow_color" points="1000,0   1000,90   500,90   500,85")
 section.blog
 	
 	aside.blog__aside
