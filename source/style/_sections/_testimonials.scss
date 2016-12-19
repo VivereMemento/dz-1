@@ -3,20 +3,67 @@
 	background-color: #f4f5f0;
 	position: relative;
 
+	&__leaves {
+		width: 155px;
+		height: 130px;
+		position: absolute;
+		z-index: 9999;
+
+		@include tablets {
+			display: none;
+		}
+
+		&-1 {
+			background: url(../img/list-1.png) no-repeat center center;
+			bottom: 31%;
+			left: 24%;
+
+			@include desktopMiddle {
+				bottom: 25%;
+				left: 10%;
+			}
+		}
+
+		&-2 {
+			background: url(../img/list-2.png) no-repeat center center;
+			top: 27%;
+			left: 17%;
+
+			@include desktopMiddle {
+				top: 35%;
+				left: 5%;
+			}
+
+		}
+
+		&-3 {
+			background: url(../img/list-3.png) no-repeat center center;
+			bottom: -21%;
+			right: 18%;
+
+			@include desktopMiddle {
+				bottom: -5%;
+				right: 5%;
+			}
+		}
+	}
+
 	&__img-wrap {
-		margin-bottom: -10px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
 	}
 
 	&__img {
-		
+		width: 100%;
+		display: block;
 	}
 
 	&-wrap {
 		width: 100%;
 		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
+		position: relative;
+		padding-bottom: 350px;
 	}
 
 	&__heading-wrap_mods {

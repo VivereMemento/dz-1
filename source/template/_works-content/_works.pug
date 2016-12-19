@@ -19,30 +19,35 @@ section.works
 		//discription__list
 
 		.slider
-			.slider__display
-				img(src="img/2.jpg" alt="" class="slider__display__img")
+			.slider__show
+				img(src="http://lorempixel.com/400/200/cats/1")
 			.slider__container
-				ul.slides
-					li.slider__item
-						img.slider__item-pic(src="assets/img/slider-item1.jpg")
-					li.slider__item
-						img.slider__item-pic(src="assets/img/slider-item1.jpg")
-					li.slider__item
-						img.slider__item-pic(src="assets/img/slider-item1.jpg")
-				.buttons
-					span.prev prev
-			//slider__container
-
-			.slider__container
-				ul.slides2
-					li.slider__item
-						img.slider__item-pic(src="assets/img/slider-item2.jpg")
-					li.slider__item
-						img.slider__item-pic(src="assets/img/slider-item2.jpg")
-					li.slider__item
-						img.slider__item-pic(src="assets/img/slider-item2.jpg")
-				.buttons
-					span.next next
+				.slider__display
+					ul.slider__list
+						li.slider__item.active
+							img.slider__item-pic(src="http://lorempixel.com/400/200/sports/3")
+						li.slider__item
+							img.slider__item-pic(src="http://lorempixel.com/400/200/cats/2")
+						li.slider__item
+							img.slider__item-pic(src="http://lorempixel.com/400/200/cats/1") 
+						li.slider__item
+							img.slider__item-pic(src="http://lorempixel.com/400/200/sports/1")
+					.slider__controls
+						a.slider__controls-top(href="#")
+				//slider__container 
+			.slider__container.slider__container_opposite
+				.slider__display
+					ul.slider__list
+						li.slider__item.active
+							img.slider__item-pic(src="http://lorempixel.com/400/200/sports/3")
+						li.slider__item
+							img.slider__item-pic(src="http://lorempixel.com/400/200/cats/2")
+						li.slider__item
+							img.slider__item-pic(src="http://lorempixel.com/400/200/cats/1")
+						li.slider__item
+							img.slider__item-pic(src="http://lorempixel.com/400/200/sports/1")
+					.slider__controls
+						a.slider__controls-bottom(href="#")
 
 			//slider__container
 		//slider

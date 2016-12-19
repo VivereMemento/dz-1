@@ -228,22 +228,10 @@
 	}
 
 	&__circle {
-		width: 25%;
+		width: 130px;
 		fill: none;
 		stroke-width: 20;
 		display: inline-block;
-
-		@include desktopSmall {
-			width: 25%;
-		}
-
-		@include tablets {
-			width: 22%;
-		}
-
-		@include phones {
-			width: 45%;
-		}
 	}
 
 	&__circle-empty {

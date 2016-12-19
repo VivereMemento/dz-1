@@ -1,6 +1,9 @@
 section.testimonials
+	.testimonials__leaves.testimonials__leaves-1
+	.testimonials__leaves.testimonials__leaves-2
+	.testimonials__leaves.testimonials__leaves-3
 	.testimonials__img-wrap
-		img.testimonials__img(src="assets/img/works-ground.png")
+		img.testimonials__img(src="assets/img/contacts-bg.png")
 	.testimonials-wrap
 		.heading-wrap.testimonials__heading-wrap_mods
 			h1.heading.testimonials__heading_mods Что обо мне <br>говорят</br>
@@ -27,11 +30,11 @@ section.testimonials
 			.conection__form
 				.title-wrap
 					h2.title Связаться со мной
-				form.form
+				form#contact-me.form
 					.form__input-wrap
-						input.form__input.form__input_conection-mods(type="text" placeholder="Имя")
-						input.form__input.form__input_conection-mods(type="text" placeholder="Email")
-						textarea.form__input.form__input_conection-mods.form__input_textarea-mods(type="textarea" placeholder="Ваше собщение")
+						input.form__input.form__input_conection-mods(type="text" placeholder="Имя" qtip-position="bottom center" qtip-content="Вы не ввели Ваше имя")
+						input.form__input.form__input_conection-mods(type="text" placeholder="Email" qtip-position="bottom center" qtip-content="Вы не ввели email")
+						textarea.form__input.form__input_conection-mods.form__input_textarea-mods(type="textarea" placeholder="Ваше собщение" name="message" qtip-position="bottom center" qtip-content="Что Вы от меня хотите?")
 					.form__btn-wrap
 						input.form__btn.form__btn_padding(type="submit" value="Отправить")
 						input.form__btn.form__btn_padding(type="reset" value="Очистить")

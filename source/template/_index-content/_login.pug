@@ -45,21 +45,21 @@
 				.login-auth
 					.title-wrap.login__title-wrap_mods
 						h2.title.login__title_mods Авторизируйтесь
-					form.form
+					form.form#contact-me
 						.form__input-wrap
 							.form__input-item
 								.form__input__icon
 									.icons.form__icons_absolute-center
 										svg.icons.form__icons_color
 											use(xlink:href="assets/img/sprite.svg#login")
-								input.form__input(type="text" placeholder="Логин")
+								input.form__input(type="text" placeholder="Логин" qtip-position="bottom center" qtip-content="Вы не ввели Ваш логин")
 
 							.form__input-item
 								.form__input__icon
 									.icons.form__icons_absolute-center
 										svg.icons.form__icons_color
 											use(xlink:href="assets/img/sprite.svg#password")
-								input.form__input(type="text" placeholder="Пароль")
+								input.form__input(type="text" placeholder="Пароль" qtip-position="bottom center" qtip-content="Вы не ввели Ваш пароль")
 
 							.patch.patch-checkbox
 								label.patch-label

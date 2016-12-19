@@ -1,8 +1,21 @@
+.header-wrap {
+	height: 100%;
+	text-align: center;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
+}
+
 .blog {
 	padding: 55px 100px 230px 55px;
 	background-color: #faf8f0;
 	display: flex;
 	flex-direction: row;
+	justify-content: flex-end;
 	position: relative;
 
 	@include tablets {
@@ -67,10 +80,78 @@
 	}
 
 	&__aside {
-		width: 21%;
+		width: 32%;
 
 		@include laptop {
+			width: 32%;
+			height: 100%;
+			padding: 15px;
+			background-color: #74a163;
+			z-index: 9999;
+			position: fixed;
+			top: 0;
+			left: -32%;
+			transition: all .5s;
+		}
+
+		&-menu__trigger {
+			width: 30px;
+			height: 50px;
+			background-color: #74a163;
+			border-top-right-radius: 50px;
+			border-bottom-right-radius: 50px;
+			position: absolute;
+			top: 50%;
+			right: -20px;
+			cursor: pointer;
 			display: none;
+
+			@include laptop {
+				display: block;
+			}
+		}
+
+		&-menu {
+			text-align: right;
+		}
+
+		&-item {
+			padding: 13px;
+			border-right: 3px solid transparent;
+
+			@include laptop {
+				padding: 5px;
+				border-right: none;
+			}
+	
+		&.active {
+			border-right: 3px solid #4e8839;
+
+			@include laptop {
+				border-right: none;
+			}
+		}
+
+		&.active .blog__aside-title {
+				font: 1rem $ffRB;
+				color: #4e8839;
+
+				@include laptop {
+					font: 0.7rem $ffRR;
+					color: #fff;
+				}
+			}
+		}
+
+		&-title {
+			font-size: 1rem;
+			color: #566358;
+			text-decoration: none;
+
+			@include laptop {
+				font-size: 0.7rem;
+				color: fade-out(#fff, .3);
+			}
 		}
 	}
 
@@ -85,26 +166,29 @@
 	}
 }
 
-.aside__list {
-	text-align: right;
-}
+.fixed {
+	width: 33.5%;
+	padding-left: 40px;
+	position: fixed;
+	top: 50px;
+	left: 0;
+	display: block;
 
-.aside__item {
-	padding: 13px;
-	
-	&.active {
-		border-right: 3px solid #4e8839;
+	@include laptop {
+		top: 0;
+		left: -33.5%;
 	}
 
-	&.active .aside__title {
-			font: 1rem $ffRB;
-			color: #4e8839;
-		}
+	@include tablets {
+		top: 0;
+		left: -33.5%;
+	}
 }
 
-.aside__title {
-	font-size: 1rem;
-	color: #566358;
+.fixed-tablets {
+	width: 33.5%;
+	left: 0;
+	padding-left: 15px;
 }
 
 .articles {

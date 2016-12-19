@@ -56,7 +56,7 @@ $headingBlack: #373e42;
 	left: 0;
 
 	@include desktopSmall {
-		margin-bottom: 0;
+		margin-bottom: -1px;
 	}
 
 	&__left {
@@ -173,6 +173,26 @@ $headingBlack: #373e42;
 	height: 20px;
 	fill: #fff;
 	vertical-align: middle;
+}
+
+//qtip classes
+
+.qtip-mystyle {
+	padding: 10px 10px;
+	background-color: #E24845;
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+
+}
+
+.bordred-js {
+	border: 1px solid #E24845;
+	
+}
+
+.colored-js {
+	fill: #E24845;
 }
 
 /* ----- common styles ----- */
