@@ -1,3 +1,17 @@
+.about__maincontent {
+	.about__arrow__left_color {
+		fill: #EBEFE2;
+	}
+
+	.about__arrow__right_color {
+		fill: #F8F9F5;
+
+		@include tablets {
+			fill: #EBEFE2;
+		}
+	}
+}
+
 .about {
 	text-align: center;
 	position: relative;
@@ -8,136 +22,128 @@
 		flex-wrap: wrap;
 	}
 
-	&__arrow__left_color {
-		fill: #EBEFE2;
+	
+}
+
+
+
+.about__me {
+	width: 50%;
+	padding: 0 15px 15px 25px;
+	background-color: #EBEFE2;
+
+	@include desktopMiddle {
+		padding-bottom: 70px;
 	}
 
-	&__arrow__right_color {
-		fill: #F8F9F5;
-
-		@include tablets {
-			fill: #EBEFE2;
-		}
+	@include tablets {
+		width: 100%;
+		padding: 30px 145px 45px 145px;
 	}
 
-	&__me {
-		width: 50%;
-		padding: 0 15px 15px 25px;
-		background-color: #EBEFE2;
+	@include phones {
+		width: 100%;
+		padding: 0;
+	}
+}
 
-		@include desktopMiddle {
-			padding-bottom: 70px;
-		}
+.about__skills {
+	width: 50%;
+	background-color: #F8F9F5;
 
-		@include tablets {
-			width: 100%;
-			padding: 30px 145px 45px 145px;
-		}
+	@include tablets {
+		width: 100%;
+	}
+}
 
-		@include phones {
-			width: 100%;
-			padding: 0;
-		}
+.about__heading-wrap_mods {
+	width: 48%;
+	display: inline-block;
+	vertical-align: top;
+
+	@include desktopMiddle {
+		width: 100%;
+		margin-top: -45px;
 	}
 
-	&__skills {
-		width: 50%;
-		background-color: #F8F9F5;
-
-		@include tablets {
-			width: 100%;
-		}
+	@include desktopSmall {
+		margin-top: 0;
 	}
 
-	&__heading-wrap_mods {
-		width: 48%;
-		display: inline-block;
-		vertical-align: top;
-
-		@include desktopMiddle {
-			width: 100%;
-			margin-top: -45px;
-		}
-
-		@include desktopSmall {
-			margin-top: 0;
-		}
-
-		@include tablets {
-			margin-bottom: 20px;
-		}
-
-		&:before {
-			background: url(../img/about_header_about.svg) no-repeat center center;
-			background-size: 350px 150px;
-
-			@include tablets {
-				background-size: 250px 100px;
-			}
-		}
-	}
-
-	&__heading_mods {
-		@include tablets {
-			line-height: 95px;
-		}
-
-		&:after {
-			bottom: 10px;
-		}
-	}
-
-	&__content {
-		width: 51%;
-		margin-top: 43px;
-		display: inline-block;
-
-		@include desktopMiddle {
-			width: 75%;
-			margin-top: 0;
-		}
-
-		@include tablets {
-			width: 100%;
-			margin-top: 0;
-		}
-	}
-
-	&__me-img-wrap {
-		margin: 0;
-	}
-
-	&__me-img {
-		min-width: 100%;
-		max-width: 100%;
-		min-height: 100%;
-	}
-
-	&__text-wrap {
-		padding: 20px 25px 0 0;
-
-		@include tablets {
-			padding: 0;
-		}
-
-		@include phones {
-			padding: 0 10px 20px 10px;
-		}
-	}
-
-	&__text {
+	@include tablets {
 		margin-bottom: 20px;
-		font: 1rem/23px $ffRR;
-		color: #566358;
-		text-align: left;
+	}
 
-		&:last-child {
-			margin-bottom: 0;
-		}
+	&:before {
+		background: url(../img/about_header_about.svg) no-repeat center center;
+		background-size: 350px 150px;
 
-		@include phones {
-			font-size: 14px;
+		@include tablets {
+			background-size: 250px 100px;
 		}
+	}
+}
+
+.about__heading_mods {
+	@include tablets {
+		line-height: 95px;
+	}
+
+	&:after {
+		bottom: 10px;
+	}
+}
+
+.about__content {
+	width: 51%;
+	margin-top: 43px;
+	display: inline-block;
+
+	@include desktopMiddle {
+		width: 75%;
+		margin-top: 0;
+	}
+
+	@include tablets {
+		width: 100%;
+		margin-top: 0;
+	}
+}
+
+.about__me-img-wrap {
+	margin: 0;
+}
+
+.about__me-img {
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 100%;
+}
+
+.about__text-wrap {
+	padding: 20px 25px 0 0;
+
+	@include tablets {
+		padding: 0;
+	}
+
+	@include phones {
+		padding: 0 10px 20px 10px;
+	}
+}
+
+.about__text {
+	margin-bottom: 20px;
+	font: 1rem/23px $ffRR;
+	color: #566358;
+	text-align: left;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	@include phones {
+		font-size: 14px;
 	}
 }
 
@@ -159,112 +165,109 @@
 	}
 }
 
-.skills {
+.skills__text-wrap {
+	margin-top: 30px;
+	padding: 0 35px;
 
-	&__text-wrap {
-		margin-top: 30px;
-		padding: 0 35px;
-
-		@include tablets {
-			margin-top: 0;
-			padding: 0 110px;
-		}
-
-		@include phones {
-			padding: 20px 10px;
-			font-size: 0.875rem;
-		}
+	@include tablets {
+		margin-top: 0;
+		padding: 0 110px;
 	}
 
-	&__text {
-		color: #566358;
-		text-align: left;
+	@include phones {
+		padding: 20px 10px;
+		font-size: 0.875rem;
+	}
+}
+
+.skills__text {
+	color: #566358;
+	text-align: left;
+}
+
+
+.skills__list {
+	padding: 50px 10px 22px 35px;
+
+	@include phones {
+		padding: 10px;
+	}
+}
+
+.skills__list-title {
+	margin: 0;
+	margin-bottom: 7px;
+	font: 1.750rem/32px $ffRM;
+	color: #566358;
+	text-align: left;
+
+	@include tablets {
+		text-align: center;
 	}
 
+	@include phones {
+		font-size: 21px;
+		margin-bottom: 0;
+	}
+}
 
-	&__list {
-		padding: 50px 10px 22px 35px;
+.skills__item {
+	margin-bottom: 15px;
 
-		@include phones {
-			padding: 10px;
-		}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.skills__item-wrap {
+	display: flex;
+
+	@include tablets {
+		justify-content: center;
 	}
 
-	&__list-title {
-		margin: 0;
-		margin-bottom: 7px;
-		font: 1.750rem/32px $ffRM;
-		color: #566358;
-		text-align: left;
-
-		@include tablets {
-			text-align: center;
-		}
-
-		@include phones {
-			font-size: 21px;
-			margin-bottom: 0;
-		}
+	@include phones {
+		flex-wrap: wrap;
 	}
+}
 
-	&__item {
-		margin-bottom: 15px;
+.skills__circle {
+	width: 130px;
+	fill: none;
+	stroke-width: 20;
+	display: inline-block;
+}
 
-		&:last-child {
-			margin-bottom: 0;
-		}
+.skills__circle-empty {
+	cx: 65;
+	cy: 75;
+	-moz-r: 52;
+	fill: none;
+	stroke: #dfdcd5;
+
+	@include desktopMiddle {
+		r: 48;
 	}
+}
 
-	&__item-wrap {
-		display: flex;
+.skills__circle-fill {
+	cx: 45;
+	cy: 65;
+	r:52;
+	stroke: #74a264;
+	stroke-dasharray: 30 722;
+	transition: all 1s;
 
-		@include tablets {
-			justify-content: center;
-		}
-
-		@include phones {
-			flex-wrap: wrap;
-		}
+	@include desktopMiddle {
+		r: 48;
 	}
+}
 
-	&__circle {
-		width: 130px;
-		fill: none;
-		stroke-width: 20;
-		display: inline-block;
-	}
+.skills__circle:hover .skills__circle-fill {
+	 stroke-dasharray: 650 722;
+}
 
-	&__circle-empty {
-		cx: 65;
-		cy: 75;
-		-moz-r: 52;
-		fill: none;
-		stroke: #dfdcd5;
-
-		@include desktopMiddle {
-			r: 48;
-		}
-	}
-
-	&__circle-fill {
-		cx: 45;
-		cy: 65;
-		r:52;
-		stroke: #74a264;
-		stroke-dasharray: 30 722;
-		transition: all 1s;
-
-		@include desktopMiddle {
-			r: 48;
-		}
-	}
-
-	&__circle:hover .skills__circle-fill {
-		 stroke-dasharray: 650 722;
-	}
-
-	&__circle-text {
-		font-size: 1rem;
-		fill: #74a264;
-	}
+.skills__circle-text {
+	font-size: 1rem;
+	fill: #74a264;
 }

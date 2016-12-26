@@ -1,10 +1,10 @@
 var myMenu = (function() {
 
 	var init = function() {
-			_clickTrigger();
+			_setUpListners();
 		};
 
-	var _clickTrigger = function() {
+	var _setUpListners = function() {
 		$('.trigger-menu-wrap').on('click', _showMenu);
 	};
 

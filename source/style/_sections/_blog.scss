@@ -18,151 +18,155 @@
 	justify-content: flex-end;
 	position: relative;
 
+	@include laptop {
+		padding-bottom: 300px;
+	}
+
 	@include tablets {
-		padding: 55px 25px 230px 25px;
+		padding: 55px 25px 330px 25px;
 	}
 
 	@include phones {
-		padding: 35px 10px 230px 10px;
+		padding: 35px 10px 400px 10px;
+	}
+}
+
+.blog__heading_mods {
+	color: #fff;
+	font: 3.938rem/90px  "SansusWebissimo", sans-serif;
+
+	@include tablets {
+		font-size: 49px;
+		line-height: 52px;
 	}
 
-	&__heading_mods {
-		color: #fff;
-		font: 3.938rem/90px  "SansusWebissimo", sans-serif;
+	&:after {
+		background-color: #fff;
+		bottom: -25px;
+		left: 13%;
 
 		@include tablets {
-			font-size: 49px;
-			line-height: 52px;
-		}
-
-		&:after {
-			background-color: #fff;
-			bottom: -25px;
-			left: 13%;
-
-			@include tablets {
-				width: 86px;
-				height: 2px;
-				bottom: -13px;
-				left: 4%;
-			}
+			width: 86px;
+			height: 2px;
+			bottom: -13px;
+			left: 4%;
 		}
 	}
+}
 
-	&__avatar_mods {
-		width: 380px;
-		background: transparent;
-		padding-bottom: 35px;
-		background: url(../img/blog_header.svg) no-repeat bottom 20px center;
-		display: inline-block;
-		vertical-align: middle;
-		position: static;
+.blog__avatar_mods {
+	width: 380px;
+	background: transparent;
+	padding-bottom: 35px;
+	background: url(../img/blog_header.svg) no-repeat bottom 20px center;
+	display: inline-block;
+	vertical-align: middle;
+	position: static;
 
-		@include phones {
-			width: 304px;
-		}
-
-		@include tablets {
-			background-size: 210px;
-		}
+	@include phones {
+		width: 304px;
 	}
 
-	&-avatar__discription_margin_top {
-		margin-top: 50px;
-
-		@include tablets {
-			margin-top: 23px;
-		}
+	@include tablets {
+		background-size: 210px;
 	}
+}
 
-	&__arrow_color {
-		fill: #faf8f0;
+.blog-avatar__discription_margin_top {
+	margin-top: 50px;
+
+	@include tablets {
+		margin-top: 23px;
 	}
+}
 
-	&__aside {
+.blog__arrow_color {
+	fill: #faf8f0;
+}
+
+.blog__aside {
+	width: 32%;
+
+	@include laptop {
 		width: 32%;
+		height: 100%;
+		padding: 15px;
+		background-color: #74a163;
+		z-index: 9999;
+		position: fixed;
+		top: 0;
+		left: -32%;
+		transition: all .5s;
+	}
+
+	&-menu__trigger {
+		width: 30px;
+		height: 50px;
+		background-color: #74a163;
+		border-top-right-radius: 50px;
+		border-bottom-right-radius: 50px;
+		position: absolute;
+		top: 50%;
+		right: -20px;
+		cursor: pointer;
+		display: none;
 
 		@include laptop {
-			width: 32%;
-			height: 100%;
-			padding: 15px;
-			background-color: #74a163;
-			z-index: 9999;
-			position: fixed;
-			top: 0;
-			left: -32%;
-			transition: all .5s;
+			display: block;
+		}
+	}
+
+	&-menu {
+		text-align: right;
+	}
+
+	&-item {
+		padding: 13px;
+		border-right: 3px solid transparent;
+
+		@include laptop {
+			padding: 5px;
+			border-right: none;
 		}
 
-		&-menu__trigger {
-			width: 30px;
-			height: 50px;
-			background-color: #74a163;
-			border-top-right-radius: 50px;
-			border-bottom-right-radius: 50px;
-			position: absolute;
-			top: 50%;
-			right: -20px;
-			cursor: pointer;
-			display: none;
+	&.active {
+		border-right: 3px solid #4e8839;
+
+		@include laptop {
+			border-right: none;
+		}
+	}
+
+	&.active .blog__aside-title {
+			font: 1rem $ffRB;
+			color: #4e8839;
 
 			@include laptop {
-				display: block;
-			}
-		}
-
-		&-menu {
-			text-align: right;
-		}
-
-		&-item {
-			padding: 13px;
-			border-right: 3px solid transparent;
-
-			@include laptop {
-				padding: 5px;
-				border-right: none;
-			}
-	
-		&.active {
-			border-right: 3px solid #4e8839;
-
-			@include laptop {
-				border-right: none;
-			}
-		}
-
-		&.active .blog__aside-title {
-				font: 1rem $ffRB;
-				color: #4e8839;
-
-				@include laptop {
-					font: 0.7rem $ffRR;
-					color: #fff;
-				}
-			}
-		}
-
-		&-title {
-			font-size: 1rem;
-			color: #566358;
-			text-decoration: none;
-
-			@include laptop {
-				font-size: 0.7rem;
-				color: fade-out(#fff, .3);
+				font: 0.7rem $ffRR;
+				color: #fff;
 			}
 		}
 	}
 
-	&__content {
-		width: 60%;
-		margin-left: 110px;
+	&-title {
+		font-size: 1rem;
+		color: #566358;
+		text-decoration: none;
 
 		@include laptop {
-			width: 100%;
-			margin-left: 0;
+			font-size: 0.7rem;
+			color: fade-out(#fff, .3);
 		}
+	}
+}
+
+.blog__content {
+	width: 60%;
+	margin-left: 110px;
+
+	@include laptop {
+		width: 100%;
+		margin-left: 0;
 	}
 }
 
@@ -174,14 +178,18 @@
 	left: 0;
 	display: block;
 
+	@include desktopMiddle {
+		width: 32%;
+	}
+
 	@include laptop {
 		top: 0;
-		left: -33.5%;
+		left: -32%;
 	}
 
 	@include tablets {
-		top: 0;
-		left: -33.5%;
+		width: 55%;
+		left: -55%;
 	}
 }
 
@@ -189,6 +197,10 @@
 	width: 33.5%;
 	left: 0;
 	padding-left: 15px;
+
+	@include phones {
+		width: 55%;
+	}
 }
 
 .articles {

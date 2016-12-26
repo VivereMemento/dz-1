@@ -4,17 +4,38 @@ var myValidation = (function () {
 		_setUpListners();
 	};
 
-
+	var inputForm = $('.form__input'),
+		iconWrap = $('.form__input__icon'),
+		iconForm = $('.form__icons_color');
 
 	var _setUpListners = function () {
 			$('form').on('reset', _clearForm);
+			$('form').on('keydown', _clearForm);
+			$(document).on('click', _clearDocument);
 		};
 
-	var _clearForm = function() {
+
+	var _clearForm = function(event) {
 			var form = $(this);
 
 			form.find('input, textarea').trigger('hideTooltip');
+			iconWrap.removeClass('form__input-icon_bordre_red-js');
+			$('.form__icons_color').removeClass('form__icons_color_red');
+			inputForm.removeClass('form__input_border-js');
 		};
+
+	var _clearDocument = function() {
+
+			var target = $( event.target ),
+				notTarget = $('.login-wrap').not('form');
+
+			if(target.is(notTarget) || target.is('.form__btn-link_mods')) {
+				$('form').find('input, textarea').trigger('hideTooltip');
+				iconWrap.removeClass('form__input-icon_bordre_red-js');
+				iconForm.removeClass('form__icons_color_red');
+				inputForm.removeClass('form__input_border-js');
+			}
+	}
 
 	var _createQtip = function(element, position) {
 
@@ -35,14 +56,9 @@ var myValidation = (function () {
 				at: 'bottom center'
 			},
 			style: {
-				classes: 'qtip-mystyle qtip-rounded',
+				classes: 'qtip-mystyle',
 			}
 		}).trigger('show');
-	};
-
-	var _changeColor = function() {
-		$('.form__input__icon').addClass('bordred-js');
-		$('.form__icons_color').addClass('colored-js');
 	};
 
 	var validateForm = function(form){
@@ -56,7 +72,9 @@ var myValidation = (function () {
 				pos = element.attr('qtip-position');
 
 			if(val.length === 0) {
-				_changeColor();
+				iconWrap.addClass('form__input-icon_bordre_red-js');
+				iconForm.addClass('form__icons_color_red');
+				inputForm.addClass('form__input_border-js');
 				_createQtip(element, pos);
 				valid = false;
 			}

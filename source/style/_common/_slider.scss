@@ -11,6 +11,7 @@
 	height: 100vh;
 	font-size: 0;
 	background-color: #e1e4d7;
+	position: relative;
 
 	@include tablets {
 		width: 100%;
@@ -31,12 +32,29 @@
 		}
 	}
 
+	&__show-display {
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+
+	&__show-pic {
+		position: absolute;
+		max-width: 90%;
+		max-height: 90%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+
 	&__container {
 		width: 50%;
 		height: 35%;
 		display: inline-block;
 		vertical-align: top;
-		background-color: red;
 
 		&_opposite .slider__item {
 			top: 100%;
@@ -68,6 +86,7 @@
 		position: absolute;
 		left: 0;
 		top: -100%;
+		font-size: 14px;
 
 		&.active {
 			top: 0%;
@@ -87,22 +106,46 @@
 	}
 
 	&__controls {
+		width: 100%;
+		height: 35%;
 		position: absolute;
 		bottom:0;
 		right:0;
+		z-index: 1;
 
 		&-top,
 		&-bottom {
+			width: 50%;
+			height: 100%;
 			display:inline-block;
-			margin:10px;
-			background-color: #e67e22;
+			background-color: fade-out(#AAAFA8, .5);
 			color:#fff;
-			padding: 5px 20px;
-			border-radius:5px;
+			cursor: default;
+			position: relative;
+		}
+
+		&-arrow {
+			display: block;
+			width: 100px;
+			height: 50px;
+			background: url(../img/arrow_down.svg) no-repeat center center;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
 			cursor: pointer;
+			transition: all .3s;
+
 			&:hover {
-				background-color: darken(#e67e22,10%);
+				background-position: center bottom;
 			}
+		}
+
+
+		&-arrow_top {
+			transform: rotate(180deg);	
 		}
 	}
 }

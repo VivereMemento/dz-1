@@ -4,7 +4,7 @@ section.works
 		h1.heading.works__heading_mods Мои работы
 	.slider-wrap
 		ul.discription
-			li.discription__item
+			li.discription__item.active
 				.title-wrap.discription__title-wrap_mods
 					h2.title.discription__title_mods Сайт школы онлайн образования
 				.discription__text-wrap
@@ -20,34 +20,36 @@ section.works
 
 		.slider
 			.slider__show
-				img(src="http://lorempixel.com/400/200/cats/1")
+				.slider__show-display
+					img.slider__show-pic(src="assets/img/1.jpg")
 			.slider__container
 				.slider__display
 					ul.slider__list
-						li.slider__item.active
-							img.slider__item-pic(src="http://lorempixel.com/400/200/sports/3")
-						li.slider__item
-							img.slider__item-pic(src="http://lorempixel.com/400/200/cats/2")
-						li.slider__item
-							img.slider__item-pic(src="http://lorempixel.com/400/200/cats/1") 
-						li.slider__item
-							img.slider__item-pic(src="http://lorempixel.com/400/200/sports/1")
-					.slider__controls
-						a.slider__controls-top(href="#")
+						li.slider__item.active 4
+							img.slider__item-pic(src="assets/img/4.jpg")
+						li.slider__item 1
+							img.slider__item-pic(src="assets/img/1.jpg")
+						li.slider__item 2
+							img.slider__item-pic(src="assets/img/2.jpg") 
+						li.slider__item 3
+							img.slider__item-pic(src="assets/img/3.jpg")
+				.slider__controls
+					a.slider__controls-top(href="#")
+						span.slider__controls-arrow
+					a.slider__controls-bottom(href="#")
+						span.slider__controls-arrow.slider__controls-arrow_top
 				//slider__container 
 			.slider__container.slider__container_opposite
 				.slider__display
 					ul.slider__list
-						li.slider__item.active
-							img.slider__item-pic(src="http://lorempixel.com/400/200/sports/3")
-						li.slider__item
-							img.slider__item-pic(src="http://lorempixel.com/400/200/cats/2")
-						li.slider__item
-							img.slider__item-pic(src="http://lorempixel.com/400/200/cats/1")
-						li.slider__item
-							img.slider__item-pic(src="http://lorempixel.com/400/200/sports/1")
-					.slider__controls
-						a.slider__controls-bottom(href="#")
+						li.slider__item.active 2
+							img.slider__item-pic(src="assets/img/2.jpg")
+						li.slider__item 3
+							img.slider__item-pic(src="assets/img/3.jpg")
+						li.slider__item 4
+							img.slider__item-pic(src="assets/img/4.jpg")
+						li.slider__item 1
+							img.slider__item-pic(src="assets/img/1.jpg")
 
 			//slider__container
 		//slider

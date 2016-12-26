@@ -26,7 +26,8 @@ html
 
   body
     .wrapper
-        .maincontent
+        div(class="" + addclass)
+            include common/_preloader
             include common/_nav
             include common/_header
 
@@ -36,3 +37,4 @@ html
     //wrapper
 
     include common/_footer
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrUpURhUzcB2mh9BB3II8gI_mcJeCDwlA&signed_in=true&callback=initMap" async defer)

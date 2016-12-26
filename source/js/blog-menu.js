@@ -1,21 +1,30 @@
 var blogMenu = (function() {
 
+
+
 	var init = function() {
-			_clickBlogTrigger();
-			_scrollFun();
+			_setUpListners();
 		};
 
-//stick blog-menu
+	var _setUpListners = function () {
+		$('.blog__aside-menu__trigger').on('click', _showBlogMenu);
+		$(window).scroll(function(){
+			_stickMenu ();
+			_lightLink();
+		});
+	};
 
-	var asidePos = $('.blog__aside').offset().top - 50;
+//stick blog-menu
+	
 	var _stickMenu = function() {
 		var winPos = $(window).scrollTop();
+		var asidePos = $('.blog__aside').offset().top - 50;
 		
 		if (winPos >= asidePos) {
-			$('.blog__aside').addClass('fixed');  
+			$('.blog__aside-menu').addClass('fixed');  
 		}
 		else {
-			$('.blog__aside').removeClass('fixed');
+			$('.blog__aside-menu').removeClass('fixed');
 		}
 	};
 
@@ -41,13 +50,6 @@ var blogMenu = (function() {
 		});
 	};
 
-	var _scrollFun = function() {
-		$(window).scroll(function(){
-			_stickMenu ();
-			_lightLink();
-		});
-	};
-
 //click trigger-menu
 
 	var _showBlogMenu = function() {
@@ -59,10 +61,6 @@ var blogMenu = (function() {
 				$('.blog__aside').addClass('fixed-tablets');
 			}
 		};
-
-	var _clickBlogTrigger = function() {
-		$('.blog__aside-menu__trigger').on('click', _showBlogMenu);
-	};
 
 	return {
 		init: init

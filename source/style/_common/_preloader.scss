@@ -1,0 +1,58 @@
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 99999;
+	background: $green;
+}
+
+.preloader__spinner {
+	width: 150px;
+	height: 150px;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#preloader__img {
+	
+}
+
+.preloader__img-wave {
+	stroke-dasharray: 100;
+	stroke-dashoffset: 100;
+	stroke: white;
+	animation: flash 1s ease-in infinite;
+}
+
+.wave1 {
+	animation-delay: 1s;
+}
+
+.wave2 {
+	animation-delay: 1.2s;
+}
+.wave3 {
+	animation-delay: 1.4s;
+}
+
+
+
+@keyframes flash {
+	0% {
+		stroke-dashoffset: 100;
+	}
+
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+
+.preloader__percents {
+	fill: #fff;
+}

@@ -7,11 +7,17 @@ footer.footer
 
 			li.footer__item
 				.footer__menu
-					-var items = ["Мои работы", "Обо мне", "Блог", "Авторизация"]
+					-
+						var items = [
+							{ name: "Мои работы",   href: "works.html"},
+							{ name: "Обо мне",   href: "about.html"},
+							{ name: "Блог",   href: "blog.html"},
+							{ name: "Авторизация",   href: "index.html"}
+						]
 					ul.footer__menu-list
 						each item in items
 							li.footer__menu-item
-								a(href="#").footer__menu-link=item
+								a(href="" + item.href).footer__menu-link=item.name
 				//menu
 				-
 					var icons = [

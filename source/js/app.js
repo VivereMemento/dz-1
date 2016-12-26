@@ -1,11 +1,33 @@
 (function() {
   'use strict';
 
-  // setTimeout(function() {
-  //   document.querySelector('.greating_picture').classList.add('m--show');
-  // }, 1000);
 
-// parallaxHeader 
+var clickArrow = function() {
+  var winHeight = $('header').innerHeight();
+  $('html, body').animate({scrollTop: winHeight}, 1500);
+}
+
+$('.clickArrow').on('click', clickArrow);
+
+// autorize
+
+var clickLogin = function(event) {
+  var target = $( event.target );
+  if(target.is('.login__auth-btn')) {
+    $('.flipper').addClass('flip');
+  }
+
+  else {
+    if(target.is('.login-wrap') || target.is('.form__btn-link_mods')) {
+      $('.flipper').removeClass('flip');
+    };
+  }
+  
+}
+
+$(document).on('click', clickLogin);
+
+})();
 
 var parallaxHeader = (function() {
   var bg = document.querySelector('.bg-wrap');
@@ -44,24 +66,3 @@ window.onscroll = function() {
 
   parallaxHeader.init(wScroll);
 }
-
-
-// autorize
-
-var clickLogin = function(event) {
-  var target = $( event.target );
-  if(target.is('.login__auth-btn')) {
-    $('.flipper').addClass('flip');
-  }
-
-  else {
-    if(target.is('.login-wrap') || target.is('.form__btn-link_mods')) {
-      $('.flipper').removeClass('flip');
-    };
-  }
-  
-}
-
-$(document).click(clickLogin);
-
-})();
