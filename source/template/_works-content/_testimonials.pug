@@ -12,7 +12,7 @@ section.testimonials
 					figure.testimonials__item__img
 					p.testimonials__item__text.
 						Этот парень проходил обучение веб-разработке не где-то, а в 
-						LoftSchool! 2месяца только самых тяжелых испытаний и бессонных ночей!
+						LoftSchool! 2месяца только самых тяжелых испытаний и бессонных ночей!.form__input-item_testimonial-mods
 					span.testimonials__item__name Ковальчук Дмитрий
 					span.testimonials__item__name-discrpt -- основатель Loftschool
 			li.testimonials__item
@@ -29,14 +29,27 @@ section.testimonials
 			.conection__form
 				.title-wrap
 					h2.title Связаться со мной
-				form#contact-me.form
+				form#contact-me.form(form="mailForm", method="post", action="/send")
 					.form__input-wrap
-						input.form__input.form__input_conection-mods(type="text" placeholder="Имя" qtip-position="bottom center" qtip-content="Вы не ввели Ваше имя")
-						input.form__input.form__input_conection-mods(type="text" placeholder="Email" qtip-position="bottom center" qtip-content="Вы не ввели email")
-						textarea.form__input.form__input_conection-mods.form__input_textarea-mods(type="textarea" placeholder="Ваше собщение" name="message" qtip-position="bottom center" qtip-content="Что Вы от меня хотите?")
+						.form__input-item.form__input-item_testimonial-mods
+							label(for="mail-name").form__label Имя
+							input.form__input.form__input_conection-mods(type="text", placeholder="Имя", id="mail-name", name="name")
+						.form__input-item.form__input-item_testimonial-mods
+							label(for="mail-email").form__label E-mail
+							input.form__input.form__input_conection-mods(type="text", placeholder="E-mail", id="mail-email", name="email")
+						.form__input-item.form__input-item_testimonial-mods.form__input-item_textarea-mods
+							label(for="mail-message").form__label Сообщение
+							textarea.form__input.form__input_conection-mods.form__input_textarea-mods(placeholder="Ваше сообщение", name="message", id="mail-message")
 					.form__btn-wrap
-						input.form__btn.form__btn_padding(type="submit" value="Отправить")
-						input.form__btn.form__btn_padding(type="reset" value="Очистить")
+						input.form__btn.form__btn_padding(type="submit", value="Отправить", form="contact-me")
+						input.form__btn.form__btn_padding(type="reset" value="Очистить", form="contact-me")
+				.form__succes
+					.form__succes-header Ваше сообщение отправлено
+					span Спасибо за ваш интерес к моей работе.
+					span Я свяжусь с вами в ближайшее время.
+				.form__error
+					span Что-то пошло не так.
+					span Обновите страницу и отправьте сообщение снова.
 
 	//conection
 

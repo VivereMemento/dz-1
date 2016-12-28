@@ -38,7 +38,8 @@ var mySlideShow = (function () {
 
 		if (counter >= items.length) {
 			counter = 0;
-		}else if (counter === -items.length + 1) {
+		}
+		else if (counter === -items.length + 1) {
 			counter = +1;
 		}
 
@@ -88,7 +89,8 @@ var mySlideShow = (function () {
 
 			if($this.hasClass('slider__controls-bottom')) {
 				counter++;
-			}else {
+			}
+			else {
 				counter--;
 			}
 			

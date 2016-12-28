@@ -1,18 +1,21 @@
 (function() {
   'use strict';
-
-
 var clickArrow = function() {
   var winHeight = $('header').innerHeight();
   $('html, body').animate({scrollTop: winHeight}, 1500);
-}
+};
 
 $('.clickArrow').on('click', clickArrow);
 
 // autorize
 
 var clickLogin = function(event) {
-  var target = $( event.target );
+  var 
+      formGroup = $('.form__text, .form__input-item'),
+      labelGroup = $('.form__input-icon'),
+      iconGroup = $('.icons'),
+      checkGroup = $('.form__checks'),
+      target = $( event.target );
   if(target.is('.login__auth-btn')) {
     $('.flipper').addClass('flip');
   }
@@ -20,14 +23,16 @@ var clickLogin = function(event) {
   else {
     if(target.is('.login-wrap') || target.is('.form__btn-link_mods')) {
       $('.flipper').removeClass('flip');
-    };
+      formGroup.find('.tooltip').remove();
+      formGroup.removeClass('error');
+      labelGroup.removeClass('label-error');
+      iconGroup.removeClass('icon-error');
+      checkGroup.find('.tooltip').remove();
+    }
   }
-  
-}
+};
 
 $(document).on('click', clickLogin);
-
-})();
 
 var parallaxHeader = (function() {
   var bg = document.querySelector('.bg-wrap');
@@ -66,3 +71,6 @@ window.onscroll = function() {
 
   parallaxHeader.init(wScroll);
 }
+
+})();
+

@@ -87,19 +87,29 @@
 .blog__aside {
 	width: 32%;
 
-	@include laptop {
-		width: 32%;
-		height: 100%;
-		padding: 15px;
+	@include tablets {
+		width: 0;
+	}
+}
+
+.blog__aside-menu {
+	text-align: right;
+	transition: all .5s;
+
+	@include tablets {
+		width: 33.5%;
+		padding: 20px;
+		text-align: right;
 		background-color: #74a163;
-		z-index: 9999;
+		height: 100%;
 		position: fixed;
 		top: 0;
-		left: -32%;
-		transition: all .5s;
+		left: -33.5%;
+		z-index: 9999;
 	}
 
-	&-menu__trigger {
+	&:after {
+		content: attr(data-content) "";
 		width: 30px;
 		height: 50px;
 		background-color: #74a163;
@@ -116,47 +126,73 @@
 		}
 	}
 
-	&-menu {
-		text-align: right;
+	&_fixed {
+		left: 0;
+	}
+}
+
+.menu-fixed {
+	width: 29.2%;
+	position: fixed;
+	top: 30px;
+	display: block;
+
+	@include desktopMiddle {
+		width: 28.2%;
 	}
 
-	&-item {
-		padding: 13px;
-		border-right: 3px solid transparent;
+	@include tablets {
+		width: 33.5%;
+		top: 0;
+		left: -33.5%;
+	}
+}
 
-		@include laptop {
-			padding: 5px;
-			border-right: none;
-		}
+.menu-fixed-tablets {
+	top: 0;
+	left: 0;
 
-	&.active {
-		border-right: 3px solid #4e8839;
+	@include phones {
+		width: 55%;
+	}
+}
 
-		@include laptop {
-			border-right: none;
-		}
+.blog__aside-item {
+	padding: 13px;
+	border-right: 3px solid transparent;
+
+	@include laptop {
+		padding: 5px;
+		border-right: none;
 	}
 
-	&.active .blog__aside-title {
-			font: 1rem $ffRB;
-			color: #4e8839;
+&.active {
+	border-right: 3px solid #4e8839;
 
-			@include laptop {
-				font: 0.7rem $ffRR;
-				color: #fff;
-			}
-		}
+	@include laptop {
+		border-right: none;
 	}
+}
 
-	&-title {
-		font-size: 1rem;
-		color: #566358;
-		text-decoration: none;
+&.active .blog__aside-title {
+		font: 1rem $ffRB;
+		color: #4e8839;
 
 		@include laptop {
-			font-size: 0.7rem;
-			color: fade-out(#fff, .3);
+			font: 0.7rem $ffRR;
+			color: #fff;
 		}
+	}
+}
+
+.blog__aside-title {
+	font-size: 1rem;
+	color: #566358;
+	text-decoration: none;
+
+	@include laptop {
+		font-size: 0.7rem;
+		color: fade-out(#fff, .3);
 	}
 }
 
@@ -167,39 +203,6 @@
 	@include laptop {
 		width: 100%;
 		margin-left: 0;
-	}
-}
-
-.fixed {
-	width: 33.5%;
-	padding-left: 40px;
-	position: fixed;
-	top: 50px;
-	left: 0;
-	display: block;
-
-	@include desktopMiddle {
-		width: 32%;
-	}
-
-	@include laptop {
-		top: 0;
-		left: -32%;
-	}
-
-	@include tablets {
-		width: 55%;
-		left: -55%;
-	}
-}
-
-.fixed-tablets {
-	width: 33.5%;
-	left: 0;
-	padding-left: 15px;
-
-	@include phones {
-		width: 55%;
 	}
 }
 

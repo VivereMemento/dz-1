@@ -20,11 +20,13 @@
 
 .contacts-wrap {
 	width: 380px;
-	height: 315px;
 	background-color: fade-out(#fff, .2);
 	border-radius: 5px;
 	display: inline-block;
-	position: relative;
+	position: absolute;
+	left: 50%;
+	top: 40%;
+	transform: translate(-50%, -50%);
 
 	@include laptop {
 		width: 320px;
@@ -32,7 +34,9 @@
 	}
 
 	@include phones {
-		height: 255px;
+		top: 0;
+		left: 0;
+		transform: translate(0);
 	}
 }
 

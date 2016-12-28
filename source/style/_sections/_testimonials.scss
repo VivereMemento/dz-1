@@ -143,6 +143,7 @@
 	margin-right: 6px;
 	font-style: italic;
 	display: inline-block;
+	vertical-align: top;
 
 	@include laptop {
 		margin-right: 0;
@@ -206,7 +207,6 @@
 .form {
 
 	&__input_conection-mods {
-		margin-bottom: 15px;
 		padding: 15px 20px;
 		background-color: fade-out(#fff, .2);
 
@@ -223,6 +223,7 @@
 	&__input_textarea-mods {
 			height: 140px;
 			border-radius: 20px;
+			resize: none;
 		}
 
 	&__btn-wrap {

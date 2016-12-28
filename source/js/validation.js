@@ -1,93 +1,131 @@
-var myValidation = (function () {
+(function(){
+	var formValidate = {
 
-	var init = function () {
-		_setUpListners();
-	};
+		doit: function() {
+			this.listeners();
+		},
 
-	var inputForm = $('.form__input'),
-		iconWrap = $('.form__input__icon'),
-		iconForm = $('.form__icons_color');
+		listeners: function() {
+			$('#contact-me').on('submit', formValidate.mailme);
+			$('#login-form').on('submit', formValidate.loginValid);
+			$('.form__input').on('focus', formValidate.focused);
+			$('.form__input').on('focusout', formValidate.unfocused);
+		},
 
-	var _setUpListners = function () {
-			$('form').on('reset', _clearForm);
-			$('form').on('keydown', _clearForm);
-			$(document).on('click', _clearDocument);
-		};
+		focused: function() {
+			$this = $(this)
+			formGroup = $this.closest('.form__input-item'),
+			labelGroup = formGroup.find('.form__input-icon')
+			iconGroup = formGroup.find('.icons');
 
+			formGroup.addClass('input-focused');
+			labelGroup.addClass('label-focused');
+			iconGroup.addClass('icon-focused');
+			labelGroup.removeClass('label-error');
+			iconGroup.removeClass('icon-error');
+		},
 
-	var _clearForm = function(event) {
+		unfocused: function() {
+			$this = $(this)
+			formGroup = $this.closest('.form__input-item'),
+			labelGroup = formGroup.find('.form__input-icon');
+
+			formGroup.removeClass('input-focused');
+			labelGroup.removeClass('label-focused');
+			iconGroup.removeClass('icon-focused');
+		},
+
+		loginValid: function(e) {
+			e.preventDefault();
 			var form = $(this);
+			if ( formValidate.valid(form) === false ) return false;
+		},
 
-			form.find('input, textarea').trigger('hideTooltip');
-			iconWrap.removeClass('form__input-icon_bordre_red-js');
-			$('.form__icons_color').removeClass('form__icons_color_red');
-			inputForm.removeClass('form__input_border-js');
-		};
+		mailme: function(e) {
+			e.preventDefault();
+			var form = $(this);
+			if ( formValidate.valid(form) === false ) return false;
 
-	var _clearDocument = function() {
-
-			var target = $( event.target ),
-				notTarget = $('.login-wrap').not('form');
-
-			if(target.is(notTarget) || target.is('.form__btn-link_mods')) {
-				$('form').find('input, textarea').trigger('hideTooltip');
-				iconWrap.removeClass('form__input-icon_bordre_red-js');
-				iconForm.removeClass('form__icons_color_red');
-				inputForm.removeClass('form__input_border-js');
-			}
-	}
-
-	var _createQtip = function(element, position) {
-
-		element.qtip ({
-			content: {
-				text: function() {
-					return $(this).attr('qtip-content');
+			var from,email,message,data;
+			var pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
+			from=$("#mail-name").val();
+			email=$("#mail-email").val();
+			message=$("#mail-message").val();
+			data = form.serialize();
+			if(email != ''){
+				if(email.search(pattern) == 0){
+					$.ajax({
+						url: '/send',
+						type: 'POST',
+						data: data
+					})
+					.done(function() {
+						form.slideUp(200);
+						$('.form__btn-wrap').hide();
+						$('.form__succes').show();
+					})
+					.fail(function() {
+						form.slideUp(200);
+						$('.form__btn-wrap').hide();
+						$('.form__error').show();
+					})
+				} else {
+					$('input#mail-email').parents('.form__text').addClass('error');
+					$('<span class="tooltip">Некорректрый email</span>').prependTo('.error');
 				}
-			},
-			show: {
-				event: 'show'
-			},
-			hide: {
-				event: 'hideTooltip'
-			},
-			position: {
-				my: 'top center',
-				at: 'bottom center'
-			},
-			style: {
-				classes: 'qtip-mystyle',
 			}
-		}).trigger('show');
-	};
+		},
 
-	var validateForm = function(form){
+		valid: function(form) {
+			var inputs = form.find('input, textarea'),
+				labels = form.find('.form__input-icon'),
+				icons = form.find('.icons'),
+				checks = form.find('input:checkbox, input:radio'),
+				checksOk = form.find('input:checked'),
+				valid = true;
 
-		var elements = form.find('input, textarea').not('input[type="file"], input[type="hidden"]'),
-			valid = true;
+			$.each(inputs, function(index, val) {
+				var input = $(val),
+				val = input.val(),
+				formGroup = input.parents('.form__input-item'),
+				label = formGroup.find('label').text().toLowerCase(),
+				textError = 'Вы не ввели ' + label,
+				tooltip = $('<span class="tooltip">' + textError + '</span>');
 
-		$.each(elements, function(index, val){
-			var element = $(val),
-				val = element.val(),
-				pos = element.attr('qtip-position');
+				if (val.length === 0){
+					formGroup.addClass('error');
+					labels.addClass('label-error');
+					icons.addClass('icon-error');
+					tooltip.appendTo(formGroup);
+					input.on('focus', function(){
+						formGroup.find('.tooltip').remove();
+						formGroup.removeClass('error');
+						formGroup.removeClass('label-error');
+					});
+					input.on('keydown', function(){
+						formGroup.removeClass('error');
+					});
+					checks.on('change', function(){
+						checkGroup.find('.tooltip').remove();
+					});
+					valid = false;
+				}
+			});
 
-			if(val.length === 0) {
-				iconWrap.addClass('form__input-icon_bordre_red-js');
-				iconForm.addClass('form__icons_color_red');
-				inputForm.addClass('form__input_border-js');
-				_createQtip(element, pos);
-				valid = false;
+			var checkGroup = $('.form__checks'),
+				tooltip = $('<span class="tooltip">Роботам тут не место</span>');
+
+			if (checks.length > 0) {
+
+				if (checksOk.length < 2) {
+					tooltip.appendTo(checkGroup);
+					valid = false;
+				}
 			}
-		});
+			return valid;
+		}
 
-		return valid;
-	};
-		
-	return {
-		init: init,
-		validateForm: validateForm
 	}
 
-})();
-
-myValidation.init();
+	formValidate.doit();
+}());

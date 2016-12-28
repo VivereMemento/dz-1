@@ -110,8 +110,7 @@
 
 @mixin font($name, $alias, $weight: normal, $style: normal) {
 	font-family: $alias;
-	src: url("../fonts/" + $name + ".eot");
-	src: url("../fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("../fonts/" + $name + ".woff") format("woff"), url("../fonts/" + $name + ".ttf") format("truetype");
+	src: url("../fonts/" + $name + ".ttf");
 	font-weight: $weight;
 	font-style: $style;
 }

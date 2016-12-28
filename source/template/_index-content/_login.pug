@@ -1,6 +1,6 @@
 .login
-	.Background
-		canvas.Background-canvas
+	.background
+		canvas.background-canvas
 	.login-wrap
 		a.login__auth-btn(href="#") Авторизоваться
 		.flip-container
@@ -44,37 +44,38 @@
 				.login-auth
 					.title-wrap.login__title-wrap_mods
 						h2.title.login__title_mods Авторизируйтесь
-					form.form#contact-me
+					form.form#login-form(name="login-form")
 						.form__input-wrap
 							.form__input-item
-								.form__input__icon
+								label.form__input-icon(for="form__input-login") Логин
 									.icons.form__icons_absolute-center
 										svg.icons.form__icons_color
 											use(xlink:href="assets/img/sprite.svg#login")
-								input.form__input.form__input-login(type="text" placeholder="Логин" qtip-content="Вы не ввели Ваш логин")
+								input.form__input.form__input-login(type="text", placeholder="Логин", id="auth-login", name="username")
 
 							.form__input-item
-								.form__input__icon
+								label.form__input-icon(for="auth-pass") Пароль
 									.icons.form__icons_absolute-center
 										svg.icons.form__icons_color
 											use(xlink:href="assets/img/sprite.svg#password")
-								input.form__input.form__input-passward(type="text" placeholder="Пароль" qtip-content="Вы не ввели Ваш пароль")
+								input.form__input.form__input-passward(type="password", placeholder="Пароль", id="auth-pass", name="password")
 
-							.patch.patch-checkbox
-								label.patch-label
-									input.patch__input(name="check" type="checkbox")
-									span.patch-label__text Я человек
-								
-							.patch.radio
-								span.patch__question Вы точно не робот?
-								label.patch-label.patch-label_margin_right
-									input.patch__input(name="check" type="radio")
-									span.patch-label__text.patch-label__text_radio-mods
-										| Да
-								label.patch-label
-									input.patch__input(name="check" type="radio")
-									span.patch-label__text.patch-label__text_radio-mods 
-										| Не уверен
+							.form__checks
+								.patch.patch-checkbox
+									label.patch-label(for="auth-check")
+										input.patch__input(id="auth-check", name="check" type="checkbox")
+										span.patch-label__text Я человек
+									
+								.patch.radio
+									span.patch__question Вы точно не робот?
+									label.patch-label.patch-label_margin_right
+										input.patch__input(name="check" type="radio")
+										span.patch-label__text.patch-label__text_radio-mods
+											| Да
+									label.patch-label
+										input.patch__input(name="check" type="radio")
+										span.patch-label__text.patch-label__text_radio-mods 
+											| Не уверен
 
 						.form__btn-wrap
 							a.form__btn.form__btn-link_mods(href="#") На главную
