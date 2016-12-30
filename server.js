@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://92.53.127.213/test');
 
 // user
 var user = {
