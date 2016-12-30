@@ -3,13 +3,13 @@ var path = require('path');
 var http = require('http');
 var fs = require('fs');
 var pug = require('pug');
-// var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var nodemailer = require("nodemailer");
 var bodyParser = require('body-parser');
-// var cookieParser = require('cookie-parser');
-// var session = require('express-session');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
 var router = express.Router();
-// var MongoStore = require('connect-mongo')(session);
+var MongoStore = require('connect-mongo')(session);
 
 var app = express();
 var sourceFiles = '/source/template/pages';
@@ -19,14 +19,14 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-// mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/test');
 
-// // user
-// var user = {
-// 	username: 'user',
-// 	password: 'password',
-// 	id: 1
-// };
+// user
+var user = {
+	username: 'user',
+	password: 'password',
+	id: 1
+};
 
 app.use(express.static(path.join(__dirname, 'build')));
 app.set('views', __dirname + sourceFiles);
