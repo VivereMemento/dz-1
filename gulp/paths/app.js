@@ -6,9 +6,8 @@ module.exports = [
   './source/js/preloader.js',
   './source/js/menu.js',
   './source/js/slideshow.js',
-  './source/js/blog-menu.js',
-  './source/js/contact-me.js',
-  './source/js/validation.js'
+  './source/js/validation.js',
+  './source/js/blog-menu.js'
   // './source/js/water.js'
   
 ];
