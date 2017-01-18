@@ -1,7 +1,5 @@
 var preLoader = (function () {
 
-	
-
 	var init = function () {
 		var imgs = imgPath.toArray();
 		loadImages(imgs);

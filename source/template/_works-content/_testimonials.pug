@@ -5,7 +5,7 @@ section.testimonials
 	.testimonials__img-wrap
 	.testimonials-wrap
 		.heading-wrap.testimonials__heading-wrap_mods
-			h1.heading.testimonials__heading_mods Что обо мне <br>говорят</br>
+			h1.heading.testimonials__heading_mods Что обо мне <br />говорят
 		ul.testimonials__list
 			li.testimonials__item
 				.testimonials__item__text-wrap
@@ -29,7 +29,7 @@ section.testimonials
 			.conection__form
 				.title-wrap
 					h2.title Связаться со мной
-				form#contact-me.form(form="mailForm", method="post", action="/send")
+				form#contact-me.form(method="post", action="/send")
 					.form__input-wrap
 						.form__input-item.form__input-item_testimonial-mods
 							label(for="mail-name").form__label Имя
@@ -41,8 +41,8 @@ section.testimonials
 							label(for="mail-message").form__label Сообщение
 							textarea.form__input.form__input_conection-mods.form__input_textarea-mods(placeholder="Ваше сообщение", name="message", id="mail-message")
 					.form__btn-wrap
-						input.form__btn.form__btn_padding(type="submit", value="Отправить", form="contact-me")
-						input.form__btn.form__btn_padding(type="reset" value="Очистить", form="contact-me")
+						input.form__btn.form__btn_conection-mods(type="submit", value="Отправить", form="contact-me")
+						input.form__btn.resetBtn.form__btn_conection-mods(type="reset" value="Очистить", form="contact-me")
 				.form__succes
 					.form__succes-header Ваше сообщение отправлено
 					span Спасибо за ваш интерес к моей работе.

@@ -19,9 +19,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-<<<<<<< HEAD
-mongoose.connect('mongodb://92.53.127.213/test');
-=======
+mongoose.connect('mongodb://localhost/site');
 
 // user
 var user = {
@@ -42,40 +40,40 @@ app.get('/:name.html', function(req,res){
 	res.render(req.params.name + '.pug');
 });
 
-// app.use(session({
-// 	secret: 'secret',
-// 	key: 'keys',
-// 	cookie: {
-// 		path: '/',
-// 		httpOnly: true,
-// 		maxAge: null
-// 	},
-// 	saveUninitialized: true,
-// 	resave: false,
-// 	store: new MongoStore({mongooseConnection: mongoose.connection})
-// }));
+app.use(session({
+	secret: 'secret',
+	key: 'keys',
+	cookie: {
+		path: '/',
+		httpOnly: true,
+		maxAge: null
+	},
+	saveUninitialized: true,
+	resave: false,
+	store: new MongoStore({mongooseConnection: mongoose.connection})
+}));
 
-// app.post('/login',function (req,res) {
-// 	//требуем логин и пароль
-// 	if (!req.body.username || !req.body.password) {
-// 		//если нет
-// 		return res.json({status: 'Укажите логин и пароль'});
-// 	}
-// 	if (req.body.username !== user.username || req.body.password !== user.password) {
-// 		res.json({status: 'Логин и/или пароль введены не верно'});
-// 	} else {
-// 		// если верно - помечаем сессию
-// 		req.session.isReg = true;
-// 		res.json({status: 'Добро пожаловать'});
-// 	}
-// });
+app.post('/index.html',function (req,res) {
+	//требуем логин и пароль
+	if (!req.body.username || !req.body.password) {
+		//если нет
+		return res.json({status: 'Укажите логин и пароль'});
+	}
+	if (req.body.username !== user.username || req.body.password !== user.password) {
+		res.json({status: 'Логин и/или пароль введены не верно'});
+	} else {
+		// если верно - помечаем сессию
+		req.session.isReg = true;
+		res.json({status: 'Добро пожаловать'});
+	}
+});
 
-// function isAuth (req,res,next){
-// 	if (!req.session.isReg){
-// 		return next('none');
-// 	}
-// 	next();
-// };
+function isAuth (req,res,next){
+	if (!req.session.isReg){
+		return next('none');
+	}
+	next();
+};
 
 app.post('/send',function(req,res){
 	var transporter = nodemailer.createTransport({
@@ -92,8 +90,6 @@ app.post('/send',function(req,res){
 		subject: '',
 		text: req.body.name + ' ' + req.body.email + ' ' + req.body.message
 	 }
-
-	console.log(mailOptions);
 
 	 transporter.sendMail(mailOptions, function (error, info) {
 	 	if (error) {
@@ -159,5 +155,5 @@ app.post('/send',function(req,res){
 //   res.render('error.pug');
 // });
 
-app.listen(3300);
+app.listen(3000);
 console.log('Приложение запущено! Port :3000');

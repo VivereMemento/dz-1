@@ -1,0 +1,24 @@
+.panel
+	header.panel__header
+		h1.panel__heading Панель администрирования
+		a.panel__return(href="#") Вернуться на сайт
+	.tabs
+		ul.tabs__controls
+			-
+				var controls = [
+					['Обо мне', ' active'], 
+					['Мои работы', ''], 
+					['Блог', '']
+				]
+
+			each control in controls
+				li(class="tabs__controls-item" + control[1]) 
+					a.tabs__controls-link(href="#") #{control[0]}
+
+		ul.tabs__list
+			li.tabs__list-item.active
+				include ./_auth-about
+			li.tabs__list-item
+				include ./_auth-works
+			li.tabs__list-item
+				include ./_auth-blog

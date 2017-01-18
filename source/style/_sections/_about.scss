@@ -213,29 +213,26 @@
 
 .skills__item {
 	margin-bottom: 15px;
+	text-align: left;
 
 	&:last-child {
 		margin-bottom: 0;
 	}
+
+	@include tablets {
+		text-align: center;
+	}
 }
 
 .skills__item-wrap {
-	display: flex;
-
-	@include tablets {
-		justify-content: center;
-	}
-
-	@include phones {
-		flex-wrap: wrap;
-	}
+	display: inline-block;
+	margin-right: 25px;
 }
 
 .skills__circle {
 	width: 130px;
 	fill: none;
 	stroke-width: 20;
-	display: inline-block;
 }
 
 .skills__circle-empty {

@@ -2,56 +2,64 @@ section.works
 				
 	.heading-wrap.works__heading-wrap_mods
 		h1.heading.works__heading_mods Мои работы
-	.slider-wrap
-		ul.discription
-			li.discription__item.active
-				.title-wrap.discription__title-wrap_mods
-					h2.title.discription__title_mods Сайт школы онлайн образования
-				.discription__text-wrap
-					span.discription__text html, css, javascript
-				.discription__btn-wrap
-					a.discription__btn(href="#")
-						.discription__btn-icon
-							svg.icons
-								use(xlink:href="assets/img/sprite.svg#link")
-						.discription__btn-title Посмотреть сайт
+	.works__content
+			.works__left
+				.works-slider__content
+					.works-slider__content-wrapper
+						.works-slider__display
+							img(src="/" alt="image").works-slider__display-pic
+						.works-slider__item-about
+							.works__subtitle
+								.subtitle
+							.works__content-desc
+							.works__content-btn
+								a(href="#").works__content-view
+									.works__btn-icon
+										svg.icons
+											use(xlink:href="assets/img/sprite.svg#link")
+									|Посмотреть сайт
+			.works__right
+				.works-slider
+					.works-slider__controls
+						a(href="#").works-slider__control-btn.works-slider__control-btn_left
+							ul.works-slider__control-list
+								-
+									var slides = [
+										{
+											"full" : 'assets/img/slider/1.png',
+											"title" : 'Агентсво интернет решений "ITLoft"',
+											"skills" : 'node',
+											"link" : 'http://itloft.ru/'
+										},
 
-		//discription__list
+										{
+											"full" : 'assets/img/slider/2.png',
+											"title" : 'Школа онлай-образования "LoftSchool"',
+											"skills" : 'html5, CSS3, javascript, php',
+											"link" : 'http://loftschool.com/'
 
-		.slider
-			.slider__show
-				.slider__show-display
-					img.slider__show-pic(src="assets/img/1.jpg")
-			.slider__container
-				.slider__display
-					ul.slider__list
-						li.slider__item.active 4
-							img.slider__item-pic(src="assets/img/4.jpg")
-						li.slider__item 1
-							img.slider__item-pic(src="assets/img/1.jpg")
-						li.slider__item 2
-							img.slider__item-pic(src="assets/img/2.jpg") 
-						li.slider__item 3
-							img.slider__item-pic(src="assets/img/3.jpg")
-				.slider__controls
-					a.slider__controls-top(href="#")
-						span.slider__controls-arrow
-					a.slider__controls-bottom(href="#")
-						span.slider__controls-arrow.slider__controls-arrow_top
-				//slider__container 
-			.slider__container.slider__container_opposite
-				.slider__display
-					ul.slider__list
-						li.slider__item.active 2
-							img.slider__item-pic(src="assets/img/2.jpg")
-						li.slider__item 3
-							img.slider__item-pic(src="assets/img/3.jpg")
-						li.slider__item 4
-							img.slider__item-pic(src="assets/img/4.jpg")
-						li.slider__item 1
-							img.slider__item-pic(src="assets/img/1.jpg")
+										},
 
-			//slider__container
-		//slider
-	//slider-wrap
-//works
+										{
+											"full" : 'assets/img/slider/3.png',
+											"title" : 'Портал обучающих уроков "LoftBlog"',
+											"skills" : 'Ruby on Rails, javascript, RESTful',
+											"link" : 'http://loftblog.ru/'
+										},
+
+										{
+											"full" : 'assets/img/slider/4.png',
+											"title" : 'Сайт "Атма йога"',
+											"skills" : 'UX, design, seo',
+											"link" : 'http://atmayoga.ru/'
+										}
+									]
+								each value in slides
+									li.works-slider__control-item(
+										data-full="" + value.full
+										data-title="" + value.title
+										data-skills="" + value.skills
+										data-link="" + value.link
+									)
+										img.works-slider___control-img(src="" + value.full alt="image")
+						a(href="#").works-slider__control-btn.works-slider__control-btn_right

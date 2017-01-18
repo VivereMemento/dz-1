@@ -1,14 +1,12 @@
 var blogMenu = (function() {
 
-	var asidePos = $('.blog__aside').offset().top - 50;
-
 	var init = function() {
 			_setUpListners();
 		};
 
 	var _setUpListners = function () {
 		$('.blog__aside-menu').on('click', _showBlogMenu);
-		$(document).scroll(function(){
+		$(window).scroll(function(){
 			_stickMenu ();
 			_lightLink();
 		});
@@ -17,6 +15,7 @@ var blogMenu = (function() {
 //stick blog-menu
 	
 	var _stickMenu = function() {
+		var asidePos = $('.blog__aside').offset().top - 50;
 		var winPos = $(window).scrollTop();
 		
 		if (winPos >= asidePos) {

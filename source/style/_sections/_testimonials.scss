@@ -231,11 +231,8 @@
 		line-height: 0;
 	}
 
-	&__btn_padding {
-		padding: 15px 56.74px;
-
-		@include phones {
-			padding: 15px 38.9px;
-		}
+	&__btn_conection-mods {
+		width: 50%;
+		padding: 15px 0;
 	}
 }

@@ -8,7 +8,7 @@
 				.avatar.login__avatar
 					.avatar-wrap
 						figure.avatar__img-wrap
-							img.avatar__img(src="assets/img/avatar.jpg")
+							img.avatar__img(src="assets/img/avatar.jpg" alt="kuznetsov alexandr")
 						.avatar__name-wrap
 							span.avatar__name Кузнецов Александр
 							span.avatar__dicription Личный сайт веб разработчика
@@ -30,13 +30,13 @@
 					.avatar__menu
 							-
 								var items = [
-									{ name: "Мои работы",   href: "works.html"},
-									{ name: "Обо мне",   href: "about.html"},
-									{ name: "Блог",   href: "blog.html"}
+									{ name: "Мои работы",   href: "works.html", mods: " avatar__menu-item_width"},
+									{ name: "Обо мне",   href: "about.html" , mods: ""},
+									{ name: "Блог",   href: "blog.html" , mods: ""}
 								]
-							ul.avatar__menu-list
+							ul.avatar__menu-list 
 								each item in items
-									li.avatar__menu-item
+									li(class="avatar__menu-item" + item.mods)
 										a(href="" + item.href).avatar__menu-link=item.name
 
 				//avatar
@@ -44,18 +44,18 @@
 				.login-auth
 					.title-wrap.login__title-wrap_mods
 						h2.title.login__title_mods Авторизируйтесь
-					form.form#login-form(name="login-form")
+					form.form#login-form(name="login-form" action="/login")
 						.form__input-wrap
 							.form__input-item
-								label.form__input-icon(for="form__input-login") Логин
-									.icons.form__icons_absolute-center
+								label.form__input-icon(for="form__login") Логин
+									span.icons.form__icons_absolute-center
 										svg.icons.form__icons_color
 											use(xlink:href="assets/img/sprite.svg#login")
-								input.form__input.form__input-login(type="text", placeholder="Логин", id="auth-login", name="username")
+								input.form__input.form__input-login(id="form__login", type="text", placeholder="Логин", name="username")
 
 							.form__input-item
 								label.form__input-icon(for="auth-pass") Пароль
-									.icons.form__icons_absolute-center
+									span.icons.form__icons_absolute-center
 										svg.icons.form__icons_color
 											use(xlink:href="assets/img/sprite.svg#password")
 								input.form__input.form__input-passward(type="password", placeholder="Пароль", id="auth-pass", name="password")

@@ -41,7 +41,7 @@
 	transition: $transition;
 }
 
-@mixin placecolor($color: #000000) {
+@mixin placecolor($color: #373e42) {
 	&::-webkit-input-placeholder {
 		color: $color;
 	}

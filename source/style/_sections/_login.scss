@@ -180,6 +180,7 @@
 }
 
 .avatar__menu-item {
+	width: 30%;
 	display: inline-block;
 	border-right: 2px solid fade-out(#fff, .4);
 
@@ -188,8 +189,12 @@
 	}
 }
 
+.avatar__menu-item_width {
+	width: 40%;
+}
+
 .avatar__menu-link {
-	padding: 15px 30.84px;
+	padding: 15px 0;
 	font: 16px/16px $ffRM;
 	color: #fff;
 	text-decoration: none;
@@ -198,10 +203,6 @@
 
 	&:hover {
 		background-color: #487e38;
-	}
-
-	@include tablets {
-		padding: 15px 19.2px;
 	}
 }
 
@@ -238,8 +239,8 @@
 }
 
 .form__icons_absolute-center {
-	width: 13px;
-	height: 26px;
+	width: 14px;
+	height: 25px;
 	position: absolute;
 	top: 0;
 	right: 0;

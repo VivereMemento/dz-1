@@ -4,7 +4,8 @@
   "author": "a.kalin",
   "license": "ISC",
   "scripts": {
-    "postinstall": "bower install"
+    "postinstall": "bower install",
+    "start": "node server.js"
   },
   "devDependencies": {
     "browser-sync": "2.11.2",

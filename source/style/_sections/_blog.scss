@@ -161,24 +161,24 @@
 	padding: 13px;
 	border-right: 3px solid transparent;
 
-	@include laptop {
+	@include tablets {
 		padding: 5px;
 		border-right: none;
 	}
 
-&.active {
-	border-right: 3px solid #4e8839;
+	&.active {
+		border-right: 3px solid #4e8839;
 
-	@include laptop {
-		border-right: none;
+		@include tablets {
+			border-right: none;
+		}
 	}
-}
 
-&.active .blog__aside-title {
+	&.active .blog__aside-title {
 		font: 1rem $ffRB;
 		color: #4e8839;
 
-		@include laptop {
+		@include tablets {
 			font: 0.7rem $ffRR;
 			color: #fff;
 		}
@@ -190,7 +190,7 @@
 	color: #566358;
 	text-decoration: none;
 
-	@include laptop {
+	@include tablets {
 		font-size: 0.7rem;
 		color: fade-out(#fff, .3);
 	}
@@ -208,8 +208,28 @@
 
 .articles {
 
-	&__title_mods {
+	&__item {
+		padding-bottom: 70px;
+		margin-bottom: 70px;
+		border-bottom: 5px solid #ecebe4;
+
+		@include phones {
+			padding-bottom: 40px;
+			margin-bottom: 40px;
+		}
+
+		&:last-child {
+			padding-bottom: 0px;
+			margin-bottom: 0px;
+			border-bottom: 0;
+		}
+	}
+
+	&__title-wrap {
 		margin-bottom: 25px;
+	}
+
+	&__title_mods {
 		font-size: 2rem;
 		line-height: 30px;
 
@@ -226,21 +246,10 @@
 		}
 	}
 
-	&__item {
-		padding-bottom: 70px;
-		margin-bottom: 70px;
-		border-bottom: 5px solid #ecebe4;
-
-		@include phones {
-			padding-bottom: 40px;
-			margin-bottom: 40px;
-		}
-
-		&:last-child {
-			padding-bottom: 0px;
-			margin-bottom: 0px;
-			border-bottom: 0;
-		}
+	&__date {
+		margin-bottom: 20px;
+		color: #4e8839;
+		font: 16px/16px $ffRM;
 	}
 
 	&__text {

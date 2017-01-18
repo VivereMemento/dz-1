@@ -1,0 +1,38 @@
+.title-wrap.panel__title-wrap
+	h2.panel__title Страница "Обо мне"
+form.panel__form
+	.panel__form-content
+		ul.panel__skills-list
+			-
+				var list = [
+					{
+						"skills": 'Frontend',
+						"skillsItem": ['html', 'css', 'javascript']
+					},
+					{
+						"skills": 'Backend',
+						"skillsItem": ['PHP', 'Node.js', 'Mongo.db', 'MySQL']
+					},
+					{
+						"skills": 'Workflow',
+						"skillsItem": ['Git', 'Gulp', 'Bower']
+					}
+				]
+			each item in list
+				li.panel__skills-item
+					.panel__skills-content
+						.panel__skills-title-wrap
+							h3.panel__skills-title= item.skills
+						table.panel__form-contentt-wrap
+							tbody
+								each skill in item.skillsItem
+									tr.table__string
+										td
+											.panel__form-label-wrap
+												label.panel__form-label(for="panel__form-" + skill)= skill
+										td
+											.panel__form-input-wrap
+												input.tabs__input.tabs__input_about-mods(type="text" id="panel__form-" + skill, name="skill-" + skill)
+												.tabs__input-percent %
+		.panel__form-submit
+			input.panel__form-btn(type="submit" value="Сохранить")

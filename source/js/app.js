@@ -1,5 +1,29 @@
 (function() {
   'use strict';
+
+//Tabs
+    
+$('.tabs__controls-link').on('click', function(e){
+  e.preventDefault();
+
+  var $this = $(this),
+      container = $this.closest('.tabs'),
+      item = container.find('.tabs__controls-item'),
+      closestItem = $this.closest(item),
+      contentItem = container.find('.tabs__list-item'),
+      itemPosition = closestItem.index();
+
+      contentItem.eq(itemPosition)
+          .addClass('active')
+          .siblings()
+          .removeClass('active');
+
+      closestItem.addClass('active')
+          .siblings()
+          .removeClass('active');
+
+});
+
 var clickArrow = function() {
   var winHeight = $('header').innerHeight();
   $('html, body').animate({scrollTop: winHeight}, 1500);

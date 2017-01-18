@@ -1,0 +1,242 @@
+.wrapper_panel-mods {
+	background: #fff url(../img/header-bg.jpg) no-repeat center center;
+	background-size: cover;
+
+	&:before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		background-color: fade-out(#fff, .2);
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+.panel {
+	width: 100%;
+	height: 100%;
+	position: relative;
+
+	&__header {
+		padding: 25px 40px;
+		color: #fff;
+		background-color: #6c9c5a;
+		@include clearfix;
+		position: relative;
+	}
+
+	&__heading {
+		font: 28px/28px $ffRM;
+		margin: 0;
+		float: left;
+	}
+
+	&__return {
+		margin-top: 8px;
+		font: 16px/16px $ffRM;
+		color: fade-out(#fff, .3);
+		float: right;
+		border-bottom: 1px solid fade-out(#fff, .3);
+		text-decoration: none;
+
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+
+// ********* tabs__controls ********* //
+
+.tabs__controls {
+	width: 100%;
+	font-size: 0;
+	background-color: #f0efe9;
+	position: relative;
+}
+
+.tabs__controls-item {
+	display: inline-block;
+	border-right: 2px solid white;
+}
+
+.tabs__controls-item:hover,
+.tabs__controls-item.active .tabs__controls-link,
+.tabs__controls-item:hover .tabs__controls-link {
+	color: #6c9c5a;
+	background-color: white;
+}
+
+.tabs__controls-item :first-child {
+	border-right: 0;
+}
+
+.tabs__controls-link {
+	padding: 20px 40px;
+	font: 16px/16px $ffRM;
+	color: #566358;
+	text-transform: uppercase;
+	text-decoration: none;
+	display: block;
+}
+
+// ********* tabs__list ********** //
+
+.tabs__list {
+	position: relative;
+}
+
+.tabs__list-item {
+	padding: 40px 35px;
+	display: none;
+}
+
+.tabs__list-item.active {
+	display: block;
+}
+
+// ******* about ******** //
+
+.panel__title-wrap {
+	margin-bottom: 29px;
+	padding: 0;
+}
+
+.panel__title {
+	margin: 0;
+	font: 21px/21px $ffRM;
+	color: #566358;
+}
+
+.panel__skills-title {
+	margin: 0;
+	font: 16px/16px $ffRM;
+	color: #566358;
+}
+
+.panel__skills-item {
+	display: inline-block;
+	margin: 0 90px 50px 0;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.panel__skills-title-wrap {
+	margin-bottom: 10px;
+}
+
+.panel__form-label-wrap {
+	padding: 0 0 5px 25px;
+}
+
+.panel__form-label {
+	font-family: $ffRR;
+}
+
+.panel__form-input-wrap {
+	margin: 0 0 8px 25px;
+}
+
+.tabs__input {
+	width: 60%;
+	padding: 11px 20px;
+	font: 16px/16px $ffRR;
+	border: none;
+	border-radius: 5px;
+
+	@include placecolor;
+}
+
+.tabs__input_about-mods {
+	width: 46px;
+	height: 32px;
+	padding: 5px 8px;
+}
+
+.tabs__input-percent {
+	display: inline-block;
+}
+
+.panel__form-btn {
+	width: 119px;
+	height: 45px;
+	color: #fff;
+	background-color: #6c9c5a;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+
+	&:hover {
+		background-color: darken(#6c9c5a, 10%);
+	}
+}
+
+// ******* works ******** //
+
+.file-input {
+	position: relative;
+	display: block;
+	cursor: pointer;
+
+	.tabs__input {
+		position: absolute;
+		top: 0;
+		left: -9999px;
+	}
+}
+
+.file-input__fake {
+	white-space: nowrap;
+}
+
+.file-input__icon {
+	@include inlineblock();
+}
+
+.file-input__text {
+	@include inlineblock();
+	margin-top: 4px;
+	font: 16px/16px $ffRR;
+	color: #8eb283;
+	border-bottom: 1px solid transparent;
+
+	&:hover {
+		border-bottom: 1px solid #8eb283;
+	}
+}
+
+// ******* blog ******** //
+
+.blog__panel-form {
+	width: 50%;
+}
+
+.panel__form-title {
+	margin-bottom: 15px;
+	font: 16px/16px $ffRM;
+	color: #566358;
+}
+
+.panel__form-input-wrap_blog-mods {
+	margin-bottom: 15px;
+	margin-left: 0;
+}
+
+.tabs__input_taxtarea-mods {
+	width: 100%;
+	height: 165px;
+	resize: none;
+}
+
+
+.tabs__input_taxtarea-mods::-webkit-scrollbar {
+	width: 20px;
+}
+ 
+.tabs__input_taxtarea-mods::-webkit-scrollbar-thumb {
+	border: 8px solid white;
+	border-radius: 10px;
+	background-color: #ededee;
+}
