@@ -16,7 +16,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 9999;
+	z-index: 99;
 	@include clearfix;
 
 	@include phones {
@@ -32,12 +32,16 @@
 
 .header__icons_mods {
 	width: 30px;
-	height: 30px;
+	height: 25px;
 	fill: #fff;
 	transition: fill .3s;
 
 	&:hover {
 		fill: #4e8839;
+	}
+
+	@include tablets {
+		width: 28px;
 	}
 
 	@include phones {

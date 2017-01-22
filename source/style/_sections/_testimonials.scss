@@ -157,29 +157,33 @@
 		margin-right: 0;
 	}
 
-	&__img {
+	&-img {
 		width: 78px;
 		height: 78px;
 		margin: 0 auto;
-		background: url(../img/testimonials.jpg) no-repeat top -18px left -1px;
+		// background: url(../img/testimonials.jpg) no-repeat top -18px left -1px;
 		border-radius: 50%;
 		overflow: hidden;
 	}
 
-	&__text-wrap {
+	&-text-wrap {
 		background: url(../img/quotes.svg) no-repeat top 70px left 2px;
 	}
 
-	&__text {
+	&-text {
 		margin-top: 20px;
 		text-align: left;
 	}
 
-	&__name {
+	&-name {
 		margin-top: 25px;
 		font-weight: 700;
 		color: #4e8839;
 		display: block;
+
+		@include tablets {
+			margin-top: 10px;
+		}
 	}
 }
 
@@ -198,6 +202,10 @@
 		display: inline-block;
 		overflow: hidden;
 
+		@include tablets {
+			width: 350px;
+		}
+
 		@include phones {
 			width: 310px;
 		}
@@ -209,6 +217,10 @@
 	&__input_conection-mods {
 		padding: 15px 20px;
 		background-color: fade-out(#fff, .2);
+
+		@include tablets {
+			padding: 12px 20px;
+		}
 
 		@include phones {
 			padding: 10px 20px;

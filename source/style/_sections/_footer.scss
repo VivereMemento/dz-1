@@ -70,6 +70,11 @@
 		color: #fff;
 		opacity: .5;
 
+		@include tablets {
+			font-size: 14px;
+			opacity: 1;
+		}
+
 		@include phones {
 			font-size: 0.95rem;
 		}
@@ -80,6 +85,7 @@
 	}
 
 	&-text_mods {
+		opacity: .5;
 		font-style: italic;
 
 		@include phones {
@@ -98,8 +104,12 @@
 		}
 
 	&-text {
-		font-family: 1rem $ffRL;
+		font: 1rem $ffRL;
 		color: #fff;
+
+		@include tablets {
+			font-size: 0.9rem;
+		}
 	}
 }
 
@@ -111,16 +121,12 @@
 		text-align: justify;
 
 		&:after {
-			/*эмуляция второй строчки, чтобы можно было 
-			выравнять текст по значению justify*/
 			content: "";
 			display: inline-block;
 			width: 100%;
 			height: 0;
 		}
 	}
-
-	
 
 	&-item {
 		display: inline-block;
@@ -130,6 +136,10 @@
 		font: 1rem $ffRM;
 		color: #fff;
 		text-decoration: none;
+
+		@include tablets {
+			font-size: 0.9rem;
+		}
 
 		@include phones {
 			font-size: 0.9rem;
@@ -154,5 +164,10 @@
 
 	&:hover {
 		opacity: 1;
+	}
+
+	@include tablets {
+		width: 27px;
+		height: 27px;
 	}
 }

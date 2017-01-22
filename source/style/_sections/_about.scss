@@ -91,6 +91,12 @@
 
 	&:after {
 		bottom: 10px;
+
+		@include tablets {
+			height: 3px;
+			bottom: 7px;
+			left: 24%;
+		}
 	}
 }
 
@@ -142,6 +148,10 @@
 		margin-bottom: 0;
 	}
 
+	@include tablets {
+		margin-bottom: 12px;
+	}
+
 	@include phones {
 		font-size: 14px;
 	}
@@ -162,6 +172,10 @@
 .about__title_mods {
 	&:after {
 		left: -5%;
+
+		@include tablets {
+			left: -12%;
+		}
 	}
 }
 
@@ -202,7 +216,9 @@
 	text-align: left;
 
 	@include tablets {
+		margin-bottom: 0;
 		text-align: center;
+		font-size: 21px;
 	}
 
 	@include phones {
@@ -227,6 +243,10 @@
 .skills__item-wrap {
 	display: inline-block;
 	margin-right: 25px;
+
+	@include tablets {
+		margin-right: 10px;
+	}
 }
 
 .skills__circle {

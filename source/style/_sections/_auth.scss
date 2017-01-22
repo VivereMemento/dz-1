@@ -19,17 +19,29 @@
 	position: relative;
 
 	&__header {
-		padding: 25px 40px;
+		padding: 25px 31px;
 		color: #fff;
+		text-align: center;
 		background-color: #6c9c5a;
 		@include clearfix;
 		position: relative;
+
+		@include phones {
+			padding: 25px 15px;
+		}
 	}
 
 	&__heading {
 		font: 28px/28px $ffRM;
 		margin: 0;
 		float: left;
+
+		@include phones {
+			margin-top: 10px;
+			font-size: 20px;
+			line-height: 17px;
+			float: none;
+		}
 	}
 
 	&__return {
@@ -39,6 +51,11 @@
 		float: right;
 		border-bottom: 1px solid fade-out(#fff, .3);
 		text-decoration: none;
+
+		@include phones {
+			float: none;
+
+		}
 
 		&:hover {
 			color: #fff;
@@ -58,6 +75,11 @@
 .tabs__controls-item {
 	display: inline-block;
 	border-right: 2px solid white;
+
+	@include phones {
+		width: 100%;
+		text-align: center;
+	}
 }
 
 .tabs__controls-item:hover,
@@ -87,8 +109,12 @@
 }
 
 .tabs__list-item {
-	padding: 40px 35px;
+	padding: 50px 30px;
 	display: none;
+
+	@include phones {
+		padding: 40px 15px;
+	}
 }
 
 .tabs__list-item.active {
@@ -98,7 +124,7 @@
 // ******* about ******** //
 
 .panel__title-wrap {
-	margin-bottom: 29px;
+	margin-bottom: 43px;
 	padding: 0;
 }
 
@@ -116,19 +142,29 @@
 
 .panel__skills-item {
 	display: inline-block;
-	margin: 0 90px 50px 0;
+	margin: 0 98px 50px 0;
 
 	&:last-child {
 		margin-right: 0;
 	}
+
+	@include tablets {
+		width: 100%;
+	}
 }
 
 .panel__skills-title-wrap {
-	margin-bottom: 10px;
+	margin-bottom: 17px;
+}
+
+.td_mods_width {
+	@include tablets {
+		width: 100px;
+	}
 }
 
 .panel__form-label-wrap {
-	padding: 0 0 5px 25px;
+	padding: 0 0 5px 21px;
 }
 
 .panel__form-label {
@@ -136,17 +172,25 @@
 }
 
 .panel__form-input-wrap {
-	margin: 0 0 8px 25px;
+	margin: 0 0 8px 33px;
 }
 
 .tabs__input {
-	width: 60%;
+	width: 53%;
 	padding: 11px 20px;
 	font: 16px/16px $ffRR;
 	border: none;
 	border-radius: 5px;
 
 	@include placecolor;
+
+	@include tablets {
+		width: 65%;
+	}
+
+	@include phones {
+		width: 100%;
+	}
 }
 
 .tabs__input_about-mods {
@@ -211,16 +255,24 @@
 
 .blog__panel-form {
 	width: 50%;
+
+	@include tablets {
+		width: 65%;
+	}
+
+	@include phones {
+		width: 100%;
+	}
 }
 
 .panel__form-title {
-	margin-bottom: 15px;
+	margin-bottom: 22px;
 	font: 16px/16px $ffRM;
 	color: #566358;
 }
 
 .panel__form-input-wrap_blog-mods {
-	margin-bottom: 15px;
+	margin-bottom: 23px;
 	margin-left: 0;
 }
 
@@ -228,6 +280,10 @@
 	width: 100%;
 	height: 165px;
 	resize: none;
+
+	@include tablets {
+		height: 300px;
+	}
 }
 
 

@@ -92,6 +92,10 @@
     left: 50%;
     top: 40%;
     transform: translate(-50%, -50%);
+
+    @include phones {
+      width: 100%;
+    }
   }
 
   &__item {

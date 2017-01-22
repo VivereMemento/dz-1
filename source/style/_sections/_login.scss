@@ -72,7 +72,7 @@
 	padding: 30px 115px;
 
 	@include tablets {
-		padding: 30px 80px;
+		padding: 30px 94px;
 	}
 
 	&__item {
@@ -156,6 +156,10 @@
 .avatar__name-wrap {
 	margin-top: 5px;
 	text-align: center;
+
+	@include tablets {
+		margin-top: 25px;
+	}
 }
 
 .avatar__name {

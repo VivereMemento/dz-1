@@ -3,7 +3,8 @@ header.header
 		img.bg(src="assets/img/header-bg.jpg" alt="forest-and-lake")
 	//header__bg-wrap
 	figure.portfolio-bg
-		img(src="assets/img/portfolio_header.png" alt="fores-and-lake" class="portfolio-bg__img")
+		svg(class="portfolio-bg__img", preserveAspectRatio="none meet")
+			use(xlink:href="assets/img/sprite.svg#portfolio_header")
 	.header__avatar-wrap
 		.avatar.header__avatar_mods
 			figure.avatar__img-wrap

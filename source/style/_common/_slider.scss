@@ -157,6 +157,10 @@
 .works__content-desc {
 	margin-bottom: 55px;
 
+	@include tablets {
+		margin-bottom: 25px;
+	}
+
 	@include phones {
 		margin: 0 0 15px 0;
 	}
@@ -318,7 +322,7 @@
 
 .works-slider__control-btn_left {
 	&:after {
-		background-image: url('../img/slider/tr-bottom.png');
+		background-image: url('../img/slider/portf_arrow_down.png');
 	}
 
 	&:hover {
@@ -331,7 +335,7 @@
 
 .works-slider__control-btn_right {
 	&:after {
-		background-image: url('../img/slider/tr-top.png');
+		background-image: url('../img/slider/portf_arrow_up.png');
 	}
 
 	&:hover {

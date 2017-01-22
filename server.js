@@ -5,6 +5,7 @@ var fs = require('fs');
 var pug = require('pug');
 var mongoose = require('mongoose');
 var nodemailer = require("nodemailer");
+var smtpTransport = require('nodemailer-smtp-transport');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -19,7 +20,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-mongoose.connect('mongodb://localhost/site');
+mongoose.connect('mongodb://localhost/test');
 
 // user
 var user = {
@@ -53,40 +54,41 @@ app.use(session({
 	store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
 
-app.post('/index.html',function (req,res) {
-	//требуем логин и пароль
-	if (!req.body.username || !req.body.password) {
-		//если нет
-		return res.json({status: 'Укажите логин и пароль'});
-	}
-	if (req.body.username !== user.username || req.body.password !== user.password) {
-		res.json({status: 'Логин и/или пароль введены не верно'});
-	} else {
-		// если верно - помечаем сессию
-		req.session.isReg = true;
-		res.json({status: 'Добро пожаловать'});
-	}
-});
+// app.post('/login',function (req,res) {
+// 	//требуем логин и пароль
+// 	if (!req.body.username || !req.body.password) {
+// 		//если нет
+// 		return res.json({status: 'Укажите логин и пароль'});
+// 	}
+// 	if (req.body.username !== user.username || req.body.password !== user.password) {
+// 		res.json({status: 'Логин и/или пароль введены не верно'});
+// 	} else {
+// 		// если верно - помечаем сессию
+// 		req.session.isReg = true;
+// 		res.json({status: 'Добро пожаловать'});
+// 		console.log('ok');
+// 	}
+// });
 
-function isAuth (req,res,next){
-	if (!req.session.isReg){
-		return next('none');
-	}
-	next();
-};
+// function isAuth (req,res,next){
+// 	if (!req.session.isReg){
+// 		return next('none');
+// 	}
+// 	next();
+// };
 
 app.post('/send',function(req,res){
-	var transporter = nodemailer.createTransport({
-		service: 'Gmail',
-		auth: {
-			user: '',
-			pass: ''
-		}
-	});
+	var transporter = nodemailer.createTransport(smtpTransport({
+    service: 'gmail',
+    auth: {
+        user: 'mymailportfolio2017@gmail.com', // my mail
+        pass: '0932891148'
+    }
+}));
 
 	var mailOptions = {
 		from: '',
-		to: '',
+		to: 'hagios@mail.ru',
 		subject: '',
 		text: req.body.name + ' ' + req.body.email + ' ' + req.body.message
 	 }
