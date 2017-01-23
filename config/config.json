@@ -1,0 +1,21 @@
+{
+	"port": 3300,
+	"mongoose": {
+		"uri": "mongodb://localhost/site",
+		"options": {
+			"server": {
+				"socketOptions": {
+					"keepAlive": 1
+				}
+			}
+		}
+	},
+	"session": {
+		"secret": "killerIsJim",
+		"key": "sid",
+		"cookie": {
+			"httpOnly": true,
+			"maxAge": null
+		}
+	}
+}

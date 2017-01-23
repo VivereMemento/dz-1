@@ -40,17 +40,17 @@ var formValidate = function(){
 		if ( valid(form) === false ) return false;
 
 		$.ajax({
-			url: "/index.html",
+			url: "/",
 			method: "POST",
 			data: form.serialize(),
 			statusCode: {
 				200: function() {
-					form.html("Вы вошли на сайт").addClass('alert-success');
-					window.location.href = "/auth.html";
+				form.html("Вы вошли на сайт").addClass('alert-success');
+				window.location.href = "/auth.html";
 				},
 				403: function(jqXHR) {
-					var error = JSON.parse(jqXHR.responseText);
-					$('.error', form).html(error.message);
+				var error = JSON.parse(jqXHR.responseText);
+				$('.error', form).html(error.message);
 				}
 			}
 		});

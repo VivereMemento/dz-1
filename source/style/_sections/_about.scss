@@ -97,6 +97,10 @@
 			bottom: 7px;
 			left: 24%;
 		}
+
+		@include phones {
+			left: 29%;
+		}
 	}
 }
 
@@ -167,16 +171,7 @@
 	@include desktopSmall {
 		margin-top: 0;
 	}
-}
 
-.about__title_mods {
-	&:after {
-		left: -5%;
-
-		@include tablets {
-			left: -12%;
-		}
-	}
 }
 
 .skills__text-wrap {

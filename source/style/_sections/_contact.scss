@@ -45,14 +45,6 @@
 	@include phones {
 		font-size: 35px;
 	}
-
-	&:after {
-		left: 20%;
-
-		@include phones {
-			left: 33%;
-		}
-	}
 }
 
 .contacts__list {

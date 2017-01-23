@@ -1,23 +1,20 @@
 /* --------- subtitle --------- */
 
 .subtitle {
-	width: 100%;
+	width: 80%;
 	@extend .title;
 
 	&:after {
-		left: 42%;
-
-		@include tablets {
-			left: 41%;
-		}
+		content: "";
+		display: block;
+		width: 88px;
+		height: 3px;
+		background-color: $titleGreen;
+		margin: 12px auto 0 auto;
 
 		@include phones {
-			left: 39%;
+			width: 56px;
 		}
-	}
-
-	@include tablets {
-		max-width: 90%;
 	}
 }
 
@@ -43,7 +40,7 @@
 }
 
 .works__subtitle {
-	margin-bottom: 50px;
+	margin-bottom: 40px;
 
 		@include phones {
 			margin-bottom: 0;
@@ -51,7 +48,7 @@
 
 	.subtitle {
 		@include phones {
-			margin-bottom: 1.5rem;
+			margin-bottom: 1rem;
 		}
 	}
 }
