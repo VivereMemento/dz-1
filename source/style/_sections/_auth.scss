@@ -126,6 +126,10 @@
 .panel__title-wrap {
 	margin-bottom: 43px;
 	padding: 0;
+
+	&:after {
+		display: none;
+	}
 }
 
 .panel__title {

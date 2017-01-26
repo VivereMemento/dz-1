@@ -214,15 +214,15 @@
 
 .login__title-wrap_mods {
 	padding: 20px 0;
+
+	&:after {
+		background-color: #fff;
+	}
 }
 
 .login__title_mods {
 	font-size: 2rem;
 	color: #fff;
-
-	&:after {
-		background-color: #fff;
-	}
 }
 
 .login-auth {

@@ -273,6 +273,46 @@
 	@include desktopMiddle {
 		r: 48;
 	}
+
+	&-html {
+		stroke-dasharray: 260 722;
+	}
+
+	&-css {
+		stroke-dasharray: 260 722;
+	}
+
+	&-js {
+		stroke-dasharray: 150 722;
+	}
+
+	&-php {
+		stroke-dasharray: 30 722;
+	}
+
+	&-sql {
+		stroke-dasharray: 30 722;
+	}
+
+	&-node {
+		stroke-dasharray: 150 722;
+	}
+
+	&-mongodb {
+		stroke-dasharray: 60 722;
+	}
+
+	&-git {
+		stroke-dasharray: 150 722;
+	}
+
+	&-gulp {
+		stroke-dasharray: 200 722;
+	}
+
+	&-bower {
+		stroke-dasharray: 260 722;
+	}
 }
 
 .skills__circle:hover .skills__circle-fill {
