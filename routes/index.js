@@ -28,7 +28,7 @@ module.exports = function(app) {
 
         var mailOptions = {
                 from: 'pochtovyy.sasha@gmail.com',
-                to: 'pochtovyy.sasha@mail.ru',
+                to: 'hagios@mail.ru',
                 subject: '',
                 text: req.body.name + ' ' + req.body.email + ' ' + req.body.message
         }
