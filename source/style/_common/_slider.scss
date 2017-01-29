@@ -171,6 +171,10 @@
 	background-color: $green;
 	border-radius: 50px;
 
+	&:hover {
+		background-color: darken($green, 10%);
+	}
+
 	&-icon, &-title {
 		display: inline-block;
 	};
