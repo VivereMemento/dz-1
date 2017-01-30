@@ -2,7 +2,6 @@
 
 module.exports = [
   './source/js/app.js',
-  './source/js/map.js',
   './source/js/preloader.js',
   './source/js/menu.js',
   './source/js/validation.js',

@@ -1,7 +1,9 @@
 var blogMenu = (function() {
 
 	var init = function() {
-			_setUpListners();
+			if ($('.blog').length) {
+		        _setUpListners();
+		    }
 		};
 
 	var _setUpListners = function () {

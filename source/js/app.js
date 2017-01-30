@@ -80,12 +80,18 @@ var parallaxHeader = (function() {
 
     init: function (wScroll) {
       this.move(bg, wScroll, 40);
-      this.move(portfolioBg, wScroll, 10);
-      this.move(avatar, wScroll, 5);
 
-      this.move(leave_1, wScroll, 15);
-      this.move(leave_2, wScroll, 5);
-      this.move(leave_3, wScroll, 3);
+      if ($('.works, .about').length) {
+        this.move(portfolioBg, wScroll, 10);
+        this.move(avatar, wScroll, 5);
+      }
+      
+
+      if ($('.works').length) {
+        this.move(leave_1, wScroll, 15);
+        this.move(leave_2, wScroll, 5);
+        this.move(leave_3, wScroll, 3); 
+      }
     }
   }
 }());
