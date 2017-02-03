@@ -2,13 +2,13 @@ var blogMenu = (function() {
 
 	var init = function() {
 			if ($('.blog').length) {
-		        _setUpListners();
-		    }
+				_setUpListners();
+			}
 		};
 
 	var _setUpListners = function () {
 		$('.blog__aside-menu').on('click', _showBlogMenu);
-        $('body').on('click', '.blog__aside-title', _clickToArticle);
+		$('body').on('click', '.blog__aside-title', _clickToArticle);
 		$(window).scroll(function(){
 			_stickMenu ();
 			_lightLink();
@@ -61,19 +61,19 @@ var blogMenu = (function() {
 	};
 
 	var _clickToArticle = function(e) {
-            e.preventDefault();
-            var
-                $this = $(this),
-                item = $this.closest('.blog__aside-item'),
-                index = item.index(),
-                sections = $('.articles__item'),
-                reqSection = sections.eq(index),
-                windowMargin = $(window).height() / 3,
-                sectionOffset = reqSection.offset().top;
-            $('body, html').animate({
-                'scrollTop' : sectionOffset - 100
-	        });
-	    };
+			e.preventDefault();
+			var
+				$this = $(this),
+				item = $this.closest('.blog__aside-item'),
+				index = item.index(),
+				sections = $('.articles__item'),
+				reqSection = sections.eq(index),
+				windowMargin = $(window).height() / 3,
+				sectionOffset = reqSection.offset().top;
+			$('body, html').animate({
+				'scrollTop' : sectionOffset - 100
+			});
+		};
 
 	return {
 		init: init

@@ -1,6 +1,9 @@
 (function() {
   'use strict';
 
+svg4everybody();
+
+
 //Tabs
     
 $('.tabs__controls-link').on('click', function(e){
